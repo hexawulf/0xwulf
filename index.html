@@ -1,43 +1,234 @@
-<header>
-    <img src="https://github.com/hexawulf/0xwulf/blob/41ed57b39455a68368ef6d9013e3dc893e2a0df0/0xWulf_Banner.png" alt="Banner" class="header-image">
-</header>
-
-<div class="profile">
-    <img src="https://github.com/hexawulf/0xwulf/blob/41ed57b39455a68368ef6d9013e3dc893e2a0df0/0xWulf_Gemini_Profile.jpeg" alt="0xWulf Profile" class="profile-image">
-    <div class="profile-info">
-        <h1>0xWulf</h1>
-        <p class="username">@hexawulf</p>
-        <a href="https://github.com/hexawulf" class="badge">
-            <img src="https://img.shields.io/github/followers/hexawulf?style=social" alt="GitHub followers">
-        </a>
-    </div>
-</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0xWulf Profile</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>0xWulf | Computer Science Student</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.85);
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid var(--bg-primary);
+            object-fit: cover;
+        }
+        
+        .profile-info {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .username {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+        
+        .badge {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        main {
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid var(--border);
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+        
+        ul {
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .interest-tag {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(88, 166, 255, 0.4);
+        }
+        
+        .location {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            color: var(--text-secondary);
+        }
+        
+        .location svg {
+            margin-right: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                height: 300px;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <img src="https://raw.githubusercontent.com/hexawulf/0xwulf/main/0xWulf_Banner.png" alt="Banner" class="header-image">
-    </header>
-
-    <main class="profile">
-        <img src="https://raw.githubusercontent.com/hexawulf/0xwulf/main/0xWulf_Gemini_Profile.jpeg" alt="0xWulf Profile" class="profile-image">
-        <div class="profile-info">
-            <h1>0xWulf</h1>
-            <p class="username">@hexawulf</p>
-            <a href="https://github.com/hexawulf" class="badge">
-                <img src="https://img.shields.io/github/followers/hexawulf?style=social" alt="GitHub followers">
-            </a>
+    <div class="container">
+        <header>
+            <img src=https://github.com/hexawulf/0xwulf/blob/41ed57b39455a68368ef6d9013e3dc893e2a0df0/0xWulf_Banner.png alt="Banner" class="header-image">
+        </header>
+        
+        <div class="profile">
+            <img src="https://github.com/hexawulf/0xwulf/blob/41ed57b39455a68368ef6d9013e3dc893e2a0df0/0xWulf_Gemini_Profile.jpeg alt="0xWulf Profile" class="profile-image">
+            <div class="profile-info">
+                <h1>0xWulf</h1>
+                <p class="username">@hexawulf</p>
+                <a href="https://github.com/hexawulf" class="badge">
+                    <img src="https://img.shields.io/github/followers/hexawulf?style=social" alt="GitHub followers">
+                </a>
+            </div>
         </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 0xWulf. All rights reserved.</p>
-    </footer>
+        
+        <main>
+            <section class="section">
+                <h2>About Me</h2>
+                <p>I'm currently an undergraduate student of Computer Science at IU, Germany. While my path to computer science may be a bit unconventional, I'm driven by a lifelong passion for learning and a fascination with technology.</p>
+                <p>My background is quite diverse:</p>
+                <ul>
+                    <li><strong>M.A. in Classical Chinese:</strong> I have a deep appreciation for Chinese language and culture, stemming from years of study and experience.</li>
+                    <li><strong>Managing Director:</strong> For over 23 years, I've led a China import company, giving me valuable business acumen and international experience.</li>
+                    <li><strong>Lifelong Learner:</strong> At 50+, I'm proving that it's never too late to pursue new passions. I'm eager to delve into the world of computer science and explore its endless possibilities.</li>
+                </ul>
+            </section>
+            
+            <section class="section">
+                <h2>My Interests</h2>
+                <div class="interests">
+                    <span class="interest-tag">💻 Coding</span>
+                    <span class="interest-tag">📖 Reading</span>
+                    <span class="interest-tag">🐉 Chinese Culture</span>
+                    <span class="interest-tag">🤖 AI</span>
+                    <span class="interest-tag">🔬 Computer Science</span>
+                </div>
+                <p style="margin-top: 20px;">I enjoy the challenge of building things and am totally new to coding. I'm an avid reader across various genres, with a particular fondness for sci-fi. I'm passionate about all aspects of Chinese culture, from language and history to philosophy and art. I'm intrigued by the potential of artificial intelligence and its impact on our future, and excited to learn as much as I can about the ever-evolving field of computer science.</p>
+            </section>
+            
+            <section class="section">
+                <h2>Get in Touch</h2>
+                <p>Feel free to connect with me on <a href="https://github.com/hexawulf">GitHub</a> or reach out if you'd like to collaborate on interesting projects.</p>
+                <div class="location">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                    <span>Currently based in Taipei, Taiwan 🇹🇼</span>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 0xWulf | Built with ❤️ using HTML & CSS</p>
+        </footer>
+    </div>
 </body>
 </html>
