@@ -1,239 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0xWulf | Computer Science Student</title>
-    <style>
-        :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
-            --accent: #58a6ff;
-            --border: #30363d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-        
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .header-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.85);
-        }
-        
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: -80px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .profile-image {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            border: 6px solid var(--bg-primary);
-            object-fit: cover;
-        }
-        
-        .profile-info {
-            text-align: center;
-            margin-top: 10px;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .username {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
-        }
-        
-        .badge {
-            display: inline-block;
-            margin-top: 10px;
-        }
-        
-        main {
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            padding: 25px;
-            margin-top: 20px;
-            border: 1px solid var(--border);
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        h2 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-        }
-        
-        ul {
-            padding-left: 25px;
-        }
-        
-        li {
-            margin-bottom: 10px;
-        }
-        
-        .interests {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        
-        .interest-tag {
-            background-color: rgba(88, 166, 255, 0.1);
-            color: var(--accent);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(88, 166, 255, 0.4);
-        }
-        
-        .location {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 15px;
-            color: var(--text-secondary);
-        }
-        
-        .location svg {
-            margin-right: 5px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            padding: 20px 0;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                height: 300px;
-            }
-            
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0xWulf | Computer Science Student</title>
+
+  <!-- ===== Minimal styling (dark) ===== -->
+  <style>
+    :root {
+      --bg-primary: #0d1117;
+      --bg-secondary: #161b22;
+      --text-primary: #c9d1d9;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --border: #30363d;
+      --max-width: 680px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    a   { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    hr  { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+    main.container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    ul { margin-left: 1.25rem; }
+    li + li { margin-top: 1rem; }
+
+    h1  { font-size: 2rem; margin-bottom: 0.75rem; }
+    h2  { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    section + section h2 { margin-top: 0.5rem; }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <img src="./hexawulf_An_anime-style_Studio_Ghibli-inspired_banner.png" alt="Banner" class="header-image">
-        </header>
-        
-        <div class="profile">
-            <img src="./0xWulf_ChatGPT_04_2025.png" alt="0xWulf Profile" class="profile-image">
-            <div class="profile-info">
-                <h1>0xWulf</h1>
-                <p class="username">@hexawulf</p>
-                <a href="https://github.com/hexawulf" class="badge">
-                    <img src="https://img.shields.io/github/followers/hexawulf?style=social" alt="GitHub followers">
-                </a>
-            </div>
-        </div>
-        
-        <main>
-            <section class="section">
-               <div style="margin-bottom: 2rem;">
-  <h2 id="about-me">About Me</h2>
-  <p>I'm a Computer Science undergraduate at IU, Germany, blending a lifelong love of learning with a deep curiosity about technology. While my path may be unconventional, it's fueled by purpose and passion.</p>
-  <p>My background is quite diverse:</p>
-  <p>🎓 M.A. in Classical Chinese – Years of studying Chinese language, literature, and culture have shaped my worldview and deepened my appreciation for tradition and complexity.<br />
-  💼 Managing Director – With over 23 years running a China-based import/export business, I bring cross-cultural insight and strategic experience to everything I do.<br />
-  📚 Lifelong Learner – At 50+, I'm proving it's never too late to reinvent yourself. CS is my newest passion, and I’m diving in headfirst.</p>
-</div>
+  <main class="container">
 
-<div style="margin-bottom: 2rem;">
-  <h2 id="my-interests">My Interests</h2>
-  <p>💻 Coding – I enjoy the challenge of building things. I'm completely new to coding and currently focused on first-semester Java projects.<br />
-  📖 Reading – Avid reader across genres, with a particular love for sci-fi.<br />
-  🧧 Chinese Culture – Passionate about language, history, philosophy, and art.<br />
-  🤖 AI – Intrigued by how artificial intelligence is shaping the future.<br />
-  🔬 Computer Science – Eager to learn as much as I can about this ever-evolving field.</p>
-</div>
+    <!-- ===== 0xWulf Profile – 2025 ===== -->
+    <section id="intro">
+      <h1>0xWulf</h1>
+      <p>
+        <strong>B.A. Computer Science student, International University of Applied Sciences (IU Germany).</strong><br>
+        Focused on Linux-first workflows and modern Java, with a strong interest in full-stack TypeScript.
+      </p>
+    </section>
 
-<div style="margin-bottom: 2rem;">
-  <h2 id="🧰-tech-stack">🧰 Tech Stack</h2>
-  <ul>
-    <li>💻 <strong>Languages & Tools</strong>: Java (beginner), Git, Bash, Eclipse IDE, JavaFX, Markdown</li>
-    <li>🐧 <strong>OS</strong>: Ubuntu Linux (main system)</li>
-    <li>🌐 <strong>Concepts</strong>: Object-Oriented Programming, Exception Handling, Number Systems</li>
-  </ul>
-</div>
+    <hr />
 
-<div style="margin-bottom: 2rem;">
-  <p><strong>– 0xWulf 🐺 | Coding my second life</strong></p>
-</div>
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <ul>
+        <li>
+          <strong><a href="https://github.com/hexawulf/reading-habit-tracker" target="_blank" rel="noopener">Reading-Habit-Tracker</a></strong><br>
+          Turns a Goodreads CSV export into interactive dashboards that surface personal reading trends.<br>
+          <em>Stack:</em> React + React Router, Recharts, Node.js/Express, CSV Parser, Day.js.
+        </li>
 
-<div style="margin-bottom: 2rem;">
-  <p>Feel free to connect with me on GitHub or reach out if you'd like to collaborate on interesting projects.</p>
-  <p>📍 Based in Taipei, Taiwan<br />
-  📬 Email: <a href="mailto:hexawulf@proton.me">hexawulf@proton.me</a></p>
-</div>
+        <li>
+          <strong><a href="https://github.com/hexawulf/tabletamer" target="_blank" rel="noopener">TableTamer</a></strong><br>
+          Browser-based CSV visualizer that converts raw data into filterable, editable tables—no back-end required.<br>
+          <em>Stack:</em> React 18, TypeScript, Vite, Tailwind CSS + shadcn/ui, PapaParse, FileSaver.js.
+        </li>
 
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 0xWulf | Built with ❤️ using HTML & CSS</p>
-        </footer>
-    </div>
+        <li>
+          <strong><a href="https://github.com/hexawulf/CodePatchwork" target="_blank" rel="noopener">CodePatchwork</a></strong><br>
+          Pinterest-style code-snippet manager with Google/Firebase auth, full-text search, and shareable boards.<br>
+          <em>Stack:</em> React + Tailwind, TypeScript, Node.js API, PostgreSQL, Firebase Authentication.
+        </li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section id="now">
+      <h2>What I’m Working On</h2>
+      <ul>
+        <li>Optimizing Java tooling for Linux desktops.</li>
+        <li>Building developer-centric web apps with clean UI/UX and robust back ends.</li>
+        <li>Exploring containerized deployments on Raspberry Pi.</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <section id="contact">
+      <h2>Let’s Connect</h2>
+      <p>
+        Open an issue, start a discussion, or reach me at
+        <a href="mailto:dev@0xwulf.dev">dev@0xwulf.dev</a>—I’m always up for constructive feedback or collaboration.
+      </p>
+    </section>
+
+  </main>
 </body>
 </html>
