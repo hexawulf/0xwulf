@@ -636,6 +636,8 @@ section:last-of-type {
     text-decoration: none; /* Ensure no underline from default <a> */
     flex-grow: 1; /* Make buttons take equal width if desired */
     max-width: 48%; /* Ensure they don't overlap if flex-grow is too much */
+    box-sizing: border-box;
+    word-wrap: break-word;
 }
 
 .btn-primary {
@@ -680,6 +682,8 @@ section:last-of-type {
     }
     .project-card {
         padding: 1.5rem;
+        overflow: hidden;
+        box-sizing: border-box;
     }
     .project-card h3 {
         font-size: 1.5rem;
@@ -689,10 +693,15 @@ section:last-of-type {
     }
     .project-links {
         flex-direction: column; /* Stack buttons on mobile */
+        gap: 0.75rem;
+        margin-top: auto;
+        width: 100%;
     }
     .btn {
         width: 100%; /* Make buttons full width on mobile */
         max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
     }
 }
 
