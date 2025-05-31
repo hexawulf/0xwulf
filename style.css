@@ -4,10 +4,13 @@
 :root {
     --primary-background: #0B0B1A; /* deep space blue */
     --secondary-background: #1A1A2E; /* midnight blue */
-    --accent-primary: #00FFAA; /* neon cyan */
-    --accent-secondary: #E94560; /* electric magenta */
+    --accent-primary: #1DA1F2; /* neon cyan */
+    --accent-secondary: #7B68EE; /* electric magenta */
+    --accent-hover: #1A91DA;
+    --accent-glow: #00AAFF;
     --text-primary: #FFFFFF; /* pure white */
     --text-secondary: #B8B8D1; /* muted lavender */
+    --text-accent: #87CEEB;
     --subtle-accent: #2E2E5F; /* dark purple */
     --border: var(--subtle-accent); /* Using subtle accent for borders */
 }
@@ -44,7 +47,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-secondary);
+    color: var(--accent-hover);
     text-decoration: underline;
 }
 
@@ -124,8 +127,8 @@ section:last-of-type {
 
 #hero img:hover {
     transform: rotate(5deg) scale(1.05); /* Subtle rotation and scale */
-    box-shadow: 0 0 25px var(--accent-secondary), 0 0 45px var(--accent-secondary); /* Glow changes to accent secondary */
-    border-color: var(--accent-secondary);
+    box-shadow: 0 0 25px var(--accent-glow), 0 0 45px var(--accent-glow); /* Glow changes to accent secondary */
+    border-color: var(--accent-hover);
 }
 
 /* Placeholder for particle animation - to be implemented later */
@@ -249,7 +252,7 @@ section:last-of-type {
     transform: translateY(-2px);
 }
 .social-icon:hover i {
-    color: var(--accent-secondary);
+    color: var(--accent-hover);
 }
 
 
@@ -319,11 +322,11 @@ section:last-of-type {
 }
 
 .btn-submit:hover {
-    background-color: var(--accent-secondary);
+    background-color: var(--accent-hover);
     color: var(--text-primary);
-    border-color: var(--accent-secondary);
+    border-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 0 12px var(--accent-secondary);
+    box-shadow: 0 0 12px var(--accent-glow);
 }
 
 /* Typing indicator placeholder - from issue */
@@ -595,22 +598,23 @@ section:last-of-type {
 
 .btn-primary:hover {
     background-color: transparent;
-    color: var(--accent-primary);
+    color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px var(--accent-primary); /* Neon glow expansion */
+    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--accent-secondary); /* Use accent secondary for this button */
+    color: var(--accent-secondary);
     border: 1px solid var(--accent-secondary);
 }
 
 .btn-secondary:hover {
     background-color: var(--accent-secondary);
     color: var(--primary-background);
+    border-color: var(--accent-secondary);
     transform: translateY(-2px);
-    box-shadow: 0 0 10px var(--accent-secondary); /* Neon glow expansion */
+    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
 }
 
 /* Responsive adjustments for Project cards */
