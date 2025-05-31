@@ -207,8 +207,9 @@ section:last-of-type {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Two columns for info and form */
     gap: 3rem; /* Space between info and form */
-    max-width: 1100px;
+    max-width: 1200px; /* MODIFIED */
     margin: 0 auto;
+    padding: 0 20px; /* ADDED */
     align-items: flex-start; /* Align items to the top */
 }
 
@@ -233,26 +234,39 @@ section:last-of-type {
     gap: 1.5rem; /* Space between social icons */
 }
 
-.social-icon {
+/* General styling for all links within .social-links */
+.social-links a {
     color: var(--text-secondary);
-    font-size: 1.2rem; /* Adjust if using text, or for icon size */
+    font-size: 1.2rem;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem; /* Space between icon and text if any */
+    gap: 0.5rem; /* Space between icon and text, or just for alignment */
     transition: color 0.3s ease, transform 0.2s ease;
 }
-.social-icon i { /* Basic styling for placeholder icons */
-    font-size: 1.5rem; /* Example size for Font Awesome */
-    color: var(--accent-primary); /* Icon color */
-}
 
-.social-icon:hover {
+.social-links a:hover {
     color: var(--accent-primary);
     transform: translateY(-2px);
 }
-.social-icon:hover i {
-    color: var(--accent-hover);
+
+/* Styling specifically for icons within any link in .social-links */
+.social-links a i {
+    font-size: 1.5rem; /* Icon size */
+    color: var(--accent-primary); /* Icon color */
+    transition: color 0.3s ease; /* Smooth color transition for icon */
+}
+
+.social-links a:hover i {
+    color: var(--accent-hover); /* Icon color on hover */
+}
+
+/* The .social-icon class can be used if specific links (e.g., those with icons)
+   need further distinction, but the base styling is now on .social-links a.
+   If .social-icon is still on <a> tags with icons, it will inherit .social-links a styles.
+   Additional .social-icon specific rules can be added here if necessary. */
+.social-icon {
+    /* e.g., if icons need slightly different alignment or spacing not covered by 'gap' */
 }
 
 
@@ -263,6 +277,10 @@ section:last-of-type {
     border-radius: 8px;
     border: 1px solid var(--subtle-accent);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    max-width: 500px; /* ADDED */
+    width: 100%; /* ADDED */
+    margin-left: auto; /* ADDED */
+    margin-right: 20px; /* ADDED */
 }
 
 .form-group {
@@ -282,6 +300,7 @@ section:last-of-type {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem 1rem;
+    box-sizing: border-box; /* ADDED */
     border-radius: 5px;
     border: 1px solid var(--subtle-accent);
     background-color: var(--primary-background); /* Dark input fields */
@@ -362,6 +381,14 @@ section:last-of-type {
     .social-links {
         justify-content: center; /* Center social links */
     }
+    /* Ensure .contact-form specific styles for 992px are here if needed, or adjust existing ones */
+}
+
+/* Added specific breakpoint for .contact-container as per request */
+@media (max-width: 1024px) {
+    .contact-container {
+        padding: 0 40px; /* ADDED */
+    }
 }
 
 @media (max-width: 768px) { /* Mobile breakpoint */
@@ -373,7 +400,10 @@ section:last-of-type {
         margin-bottom: 2rem;
     }
     .contact-form {
-        padding: 1.5rem;
+        /* padding: 1.5rem; MODIFIED to new requirement */
+        padding: 0 15px; /* MODIFIED */
+        margin-right: auto; /* ADDED */
+        margin-left: auto; /* ADDED */
     }
 }
 
