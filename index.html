@@ -1,114 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>0xWulf | Computer Science Student</title>
-
-  <!-- ===== Minimal styling (dark) ===== -->
-  <style>
-    :root {
-      --bg-primary: #0d1117;
-      --bg-secondary: #161b22;
-      --text-primary: #c9d1d9;
-      --text-secondary: #8b949e;
-      --accent: #58a6ff;
-      --border: #30363d;
-      --max-width: 680px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-                   Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    }
-
-    body {
-      background-color: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-
-    a   { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    hr  { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
-
-    main.container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 2rem 1rem 3rem;
-    }
-
-    ul { margin-left: 1.25rem; }
-    li + li { margin-top: 1rem; }
-
-    h1  { font-size: 2rem; margin-bottom: 0.75rem; }
-    h2  { font-size: 1.25rem; margin-bottom: 0.5rem; }
-    section + section h2 { margin-top: 0.5rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0xWulf - Developer Portfolio</title>
+    <!-- Link to CSS file will be added later -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <main class="container">
+    <header>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="#">0xWulf</a> <!-- Or your logo/name -->
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="resume.pdf" class="nav-link resume-link" target="_blank">Resume</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
-    <!-- ===== 0xWulf Profile – 2025 ===== -->
-    <section id="intro">
-      <h1>0xWulf</h1>
-      <p>
-        <strong>B.A. Computer Science student, International University of Applied Sciences (IU Germany).</strong><br>
-        Focused on Linux-first workflows and modern Java, with a strong interest in full-stack TypeScript.
-      </p>
-    </section>
+    <main>
+        <section id="hero">
+            <!-- Hero content -->
+            <h1>Hi, I'm 0xWulf</h1>
+            <div class="typewriter-container">
+                <p class="typewriter-text" data-text1="Building AI-driven solutions" data-text2="One line of code at a time">Building AI-driven solutions<span class="cursor"></span></p>
+            </div>
+            <img src="placeholder_profile.png" alt="0xWulf Profile Image">
+            <div class="particles"></div> <!-- Element for particle animation -->
+        </section>
 
-    <hr />
+        <section id="about">
+            <h2>About Me</h2>
+            <p>CS undergraduate at IU Germany, specializing in AI and full-stack development. Passionate about building intelligent solutions with Java and exploring the endless possibilities of Linux. When I'm not coding, you'll find me optimizing workflows or diving deep into machine learning algorithms.</p>
+        </section>
 
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      <ul>
-        <li>
-          <strong><a href="https://github.com/hexawulf/reading-habit-tracker" target="_blank" rel="noopener">Reading-Habit-Tracker</a></strong><br>
-          Turns a Goodreads CSV export into interactive dashboards that surface personal reading trends.<br>
-          <em>Stack:</em> React + React Router, Recharts, Node.js/Express, CSV Parser, Day.js.
-        </li>
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-icon"><span>📚</span></div> <!-- Placeholder Icon -->
+                    <h3>Reading-Habit-Tracker</h3>
+                    <p class="project-description">Java-based reading analytics platform with intelligent recommendations and progress tracking.</p>
+                    <p class="project-tech-stack"><strong>Tech:</strong> Java, React, Node.js, Express, CSV Parser, Day.js</p>
+                    <div class="project-links">
+                        <a href="https://github.com/hexawulf/reading-habit-tracker" target="_blank" rel="noopener" class="btn btn-primary">
+                            <!-- Placeholder for GitHub Icon --> View Code
+                        </a>
+                        <a href="https://mybooks.piapps.dev" target="_blank" rel="noopener" class="btn btn-secondary">
+                            <!-- Placeholder for External Link Icon --> Try Live Demo
+                        </a>
+                    </div>
+                </article>
 
-        <li>
-          <strong><a href="https://github.com/hexawulf/tabletamer" target="_blank" rel="noopener">TableTamer</a></strong><br>
-          Browser-based CSV visualizer that converts raw data into filterable, editable tables—no back-end required.<br>
-          <em>Stack:</em> React 18, TypeScript, Vite, Tailwind CSS + shadcn/ui, PapaParse, FileSaver.js.
-        </li>
+                <article class="project-card">
+                    <div class="project-icon"><span>🗂️</span></div> <!-- Placeholder Icon -->
+                    <h3>TableTamer</h3>
+                    <p class="project-description">Browser-based CSV visualizer with real-time editing, filtering, and data transformation capabilities.</p>
+                    <p class="project-tech-stack"><strong>Tech:</strong> React 18, TypeScript, Vite, Tailwind CSS, PapaParse, FileSaver.js</p>
+                    <div class="project-links">
+                        <a href="https://github.com/hexawulf/tabletamer" target="_blank" rel="noopener" class="btn btn-primary">
+                            View Code
+                        </a>
+                        <a href="https://piapps.dev" target="_blank" rel="noopener" class="btn btn-secondary">
+                            Try Live Demo
+                        </a>
+                    </div>
+                </article>
 
-        <li>
-          <strong><a href="https://github.com/hexawulf/CodePatchwork" target="_blank" rel="noopener">CodePatchwork</a></strong><br>
-          Pinterest-style code-snippet manager with Google/Firebase auth, full-text search, and shareable boards.<br>
-          <em>Stack:</em> React + Tailwind, TypeScript, Node.js API, PostgreSQL, Firebase Authentication.
-        </li>
-      </ul>
-    </section>
+                <article class="project-card">
+                    <div class="project-icon"><span>🧩</span></div> <!-- Placeholder Icon -->
+                    <h3>CodePatchwork</h3>
+                    <p class="project-description">Pinterest-style code snippet manager with collaborative features and Firebase integration.</p>
+                    <p class="project-tech-stack"><strong>Tech:</strong> React, Tailwind, TypeScript, Node.js, PostgreSQL, Firebase Auth</p>
+                    <div class="project-links">
+                        <a href="https://github.com/hexawulf/CodePatchwork" target="_blank" rel="noopener" class="btn btn-primary">
+                            View Code
+                        </a>
+                        <a href="https://codepatchwork.com" target="_blank" rel="noopener" class="btn btn-secondary">
+                            Try Live Demo
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    <hr />
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>Python</li>
+                        <li>C++</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technologies</h3>
+                    <ul>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>Linux</li>
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>Firebase</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>AI/ML</li>
+                        <li>System Optimization</li>
+                        <li>Open Source</li>
+                        <li>Clean Code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <section id="now">
-      <h2>What I’m Working On</h2>
-      <ul>
-        <li>Optimizing Java tooling for Linux desktops.</li>
-        <li>Building developer-centric web apps with clean UI/UX and robust back ends.</li>
-        <li>Exploring containerized deployments on Raspberry Pi.</li>
-      </ul>
-    </section>
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p>Have a project in mind, want to collaborate, or just say hi? I'd love to hear from you!</p>
+                    <p>Email: <a href="mailto:dev@0xwulf.dev">dev@0xwulf.dev</a></p>
+                    <div class="social-links">
+                        <a href="https://github.com/hexawulf" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub Profile">
+                            <!-- Placeholder for GitHub Icon (e.g., Font Awesome or SVG) -->
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://twitter.com/hexawulf" target="_blank" rel="noopener" class="social-icon" aria-label="Twitter Profile">
+                            <!-- Placeholder for Twitter Icon -->
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <!-- Add other social links as needed -->
+                    </div>
+                </div>
 
-    <hr />
+                <form class="contact-form" action="#" method="POST"> <!-- Action will be updated if form submission is implemented -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-    <section id="contact">
-      <h2>Let’s Connect</h2>
-      <p>
-        Open an issue, start a discussion, or reach me at
-        <a href="mailto:dev@0xwulf.dev">dev@0xwulf.dev</a>—I’m always up for constructive feedback or collaboration.
-      </p>
-    </section>
+    <footer>
+        <!-- Footer content will be added later -->
+        <p>&copy; 2024 0xWulf</p>
+    </footer>
 
-  </main>
+    <!-- Link to JavaScript file will be added later -->
+    <script src="script.js"></script>
 </body>
 </html>
