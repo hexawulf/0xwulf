@@ -574,6 +574,7 @@ section:last-of-type {
     flex-direction: column;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 /* 3D tilt effect on hover with border glow - from issue */
