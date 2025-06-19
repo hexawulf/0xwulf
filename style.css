@@ -172,6 +172,339 @@ section:last-of-type {
     }
 }
 
+/* About Me Section Styling */
+#about {
+    padding: 4rem 2rem; /* Generous padding */
+    background-color: var(--secondary-background); /* Slightly different background if desired, or keep same as primary */
+    text-align: center; /* Center align the content */
+    border-bottom: 1px solid var(--subtle-accent); /* Consistent separator */
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block; /* Allows for pseudo-element underline */
+}
+
+/* Underline effect for section titles */
+#about h2::after {
+    content: '';
+    position: absolute;
+    width: 60%; /* Width of the underline */
+    height: 3px;
+    bottom: -10px; /* Space below the text */
+    left: 20%; /* Centering the underline */
+    background-color: var(--accent-primary);
+    box-shadow: 0 0 8px var(--accent-primary); /* Glow for the underline */
+}
+
+#about p {
+    font-size: 1.1rem; /* Slightly larger for readability */
+    color: var(--text-secondary);
+    max-width: 720px; /* Optimal reading width */
+    margin: 0 auto; /* Center the paragraph */
+    line-height: 1.8; /* More spacing for a block of text */
+    font-weight: 300; /* Light weight for body text */
+}
+
+/* Responsive adjustments for About Me section */
+@media (max-width: 768px) { /* Mobile breakpoint */
+    #about {
+        padding: 3rem 1rem;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+    }
+
+    #about p {
+        font-size: 1rem;
+    }
+}
+
+/* Featured Projects Showcase Styling - FIXED */
+#projects {
+    padding: 4rem 2rem;
+    background-color: var(--primary-background);
+    border-bottom: 1px solid var(--subtle-accent);
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#projects h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    bottom: -10px;
+    left: 20%;
+    background-color: var(--accent-primary);
+    box-shadow: 0 0 8px var(--accent-primary);
+}
+
+.projects-grid {
+    display: grid;
+    /* Keep 2x2 grid but within 720px container */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; /* Slightly smaller gap for 720px width */
+    max-width: 720px; /* Match About Me width */
+    margin: 0 auto; /* Center the grid */
+}
+
+.project-card {
+    background-color: var(--secondary-background);
+    border: 1px solid var(--subtle-accent);
+    border-radius: 8px;
+    padding: 1.5rem; /* Slightly smaller padding for tighter layout */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
+    border-color: var(--accent-primary);
+}
+
+.project-icon {
+    font-size: 2rem; /* Slightly smaller for tighter layout */
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.project-card h3 {
+    font-size: 1.5rem; /* Smaller for better fit */
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.project-description {
+    font-size: 0.9rem; /* Smaller text for better fit */
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+    flex-grow: 1;
+}
+
+.project-tech-stack {
+    font-size: 0.8rem; /* Smaller tech stack text */
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.project-tech-stack strong {
+    color: var(--text-primary);
+}
+
+.project-links {
+    display: flex;
+    gap: 0.5rem; /* Smaller gap between buttons */
+    margin-top: auto;
+}
+
+/* General Button Styling (can be globalized later) */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-flex; /* For icon alignment if added */
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Space between icon and text */
+    text-decoration: none; /* Ensure no underline from default <a> */
+    flex-grow: 1; /* Make buttons take equal width if desired */
+    max-width: 48%; /* Ensure they don't overlap if flex-grow is too much */
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--primary-background); /* Dark text on light button */
+    border: 1px solid var(--accent-primary);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-secondary);
+    border: 1px solid var(--accent-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-secondary);
+    color: var(--primary-background);
+    border-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
+}
+
+/* Responsive adjustments for Project cards */
+@media (max-width: 768px) {
+    #projects {
+        padding: 3rem 1rem;
+    }
+    #projects h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+    }
+    .project-card {
+        padding: 1.5rem;
+    }
+    .project-card h3 {
+        font-size: 1.5rem;
+    }
+    .project-description {
+        font-size: 0.95rem;
+    }
+    .project-links {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* Skills Matrix Styling - FIXED to 2x2 grid */
+#skills {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-background);
+    border-bottom: 1px solid var(--subtle-accent);
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+}
+
+#skills h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    bottom: -10px;
+    left: 20%;
+    background-color: var(--accent-primary);
+    box-shadow: 0 0 8px var(--accent-primary);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid layout */
+    gap: 1.5rem; /* Match projects grid gap */
+    max-width: 720px; /* Match About Me width */
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skill-category {
+    background-color: var(--primary-background);
+    padding: 1.5rem; /* Slightly smaller padding for better fit */
+    border-radius: 8px;
+    border: 1px solid var(--subtle-accent);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+    box-shadow: 0 0 15px var(--accent-primary), 0 8px 20px rgba(0,0,0,0.2);
+    border-color: var(--accent-primary);
+}
+
+.skill-category h3 {
+    font-size: 1.5rem; /* Smaller for better fit in grid */
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--subtle-accent);
+    padding-bottom: 0.5rem;
+    font-weight: 500;
+    text-align: center; /* Center the category titles */
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    font-size: 0.95rem; /* Slightly smaller for better fit */
+    color: var(--text-secondary);
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.4rem;
+    background-color: var(--secondary-background);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-primary);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 300;
+}
+
+.skill-category li:hover {
+    background-color: var(--subtle-accent);
+    color: var(--text-primary);
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments for Skills Matrix */
+@media (max-width: 768px) {
+    #skills {
+        padding: 3rem 1rem;
+    }
+    #skills h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .skills-container {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 1.5rem;
+    }
+    .skill-category {
+        padding: 1.5rem;
+    }
+    .skill-category h3 {
+        font-size: 1.5rem;
+    }
+    .skill-category li {
+        font-size: 1rem;
+        padding: 0.6rem 0.9rem;
+    }
+}
+
 /* Contact Section Styling */
 #contact {
     padding: 4rem 2rem;
@@ -203,13 +536,12 @@ section:last-of-type {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column */
     gap: 3rem;
-    max-width: 720px;
+    max-width: 720px; /* Match About Me width */
     margin: 0 auto;
     padding: 0 20px;
     align-items: flex-start;
-    /* ADD THIS: */
     box-sizing: border-box;
 }
 
@@ -420,338 +752,6 @@ section:last-of-type {
     .contact-container {
         padding: 0 15px;
         /* Other properties should remain as they are or as overridden by this media query */
-    }
-}
-
-/* Skills Matrix Styling */
-#skills {
-    padding: 4rem 2rem;
-    background-color: var(--secondary-background); /* Or var(--primary-background) */
-    border-bottom: 1px solid var(--subtle-accent);
-    text-align: center; /* Center the content of the section */
-}
-
-#skills h2 { /* Section Title */
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 3rem; /* Space below title */
-    position: relative;
-    display: inline-block; /* For underline */
-}
-
-#skills h2::after { /* Consistent underline style for section titles */
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 3px;
-    bottom: -10px;
-    left: 20%;
-    background-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
-}
-
-.skills-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Responsive columns for skill categories */
-    gap: 2rem; /* Space between skill category blocks */
-    max-width: 720px; /* Max width for the skills content */
-    margin: 0 auto; /* Center the container */
-    text-align: left; /* Align text to left within each category block */
-}
-
-.skill-category {
-    background-color: var(--primary-background); /* Slightly different bg for emphasis */
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.skill-category h3 {
-    font-size: 1.75rem;
-    color: var(--accent-primary); /* Accent color for category titles */
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--subtle-accent); /* Separator for category title */
-    padding-bottom: 0.5rem;
-    font-weight: 500; /* Medium weight */
-}
-
-.skill-category ul {
-    list-style: none; /* Remove default bullets */
-    padding: 0;
-    margin: 0;
-}
-
-.skill-category li {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    padding: 0.5rem 0.75rem; /* Padding around each skill item */
-    margin-bottom: 0.5rem; /* Space between skill items */
-    background-color: var(--secondary-background); /* Background for individual skill items */
-    border-radius: 4px;
-    border-left: 3px solid var(--accent-primary); /* Accent border on the left */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: 300; /* Light weight for skill items */
-}
-
-.skill-category li:hover {
-    background-color: var(--subtle-accent); /* Hover effect for skill items */
-    color: var(--text-primary);
-    transform: translateX(5px); /* Slight shift on hover */
-}
-
-/* Responsive adjustments for Skills Matrix */
-@media (max-width: 768px) { /* Mobile breakpoint */
-    #skills {
-        padding: 3rem 1rem;
-    }
-    #skills h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    .skills-container {
-        gap: 1.5rem;
-    }
-    .skill-category {
-        padding: 1.5rem;
-    }
-    .skill-category h3 {
-        font-size: 1.5rem;
-    }
-    .skill-category li {
-        font-size: 1rem;
-        padding: 0.6rem 0.9rem;
-    }
-}
-
-/* Featured Projects Showcase Styling */
-#projects {
-    padding: 4rem 2rem;
-    background-color: var(--primary-background); /* Or var(--secondary-background) for variation */
-    border-bottom: 1px solid var(--subtle-accent);
-}
-
-#projects h2 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    text-align: center;
-    margin-bottom: 3rem; /* More space before the grid */
-    position: relative;
-    display: inline-block; /* For underline */
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#projects h2::after { /* Consistent underline style for section titles */
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 3px;
-    bottom: -10px;
-    left: 20%;
-    background-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
-}
-
-.projects-grid {
-    display: grid;
-    /* Force a two column layout on larger screens for a 2x2 project grid */
-    grid-template-columns: 1fr;
-    gap: 2rem; /* Space between cards */
-    max-width: 720px; /* Max width of the grid itself */
-    margin: 0 auto; /* Center the grid */
-}
-
-.project-card {
-    background-color: var(--secondary-background);
-    border: 1px solid var(--subtle-accent);
-    border-radius: 8px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-}
-
-/* 3D tilt effect on hover with border glow - from issue */
-.project-card:hover {
-    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg); /* Subtle 3D tilt */
-    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3); /* Enhanced shadow and glow */
-    border-color: var(--accent-primary);
-}
-
-.project-icon {
-    font-size: 2.5rem; /* Placeholder icon size */
-    color: var(--accent-primary);
-    margin-bottom: 1rem;
-    text-align: center; /* Center icon if it's text/emoji */
-}
-/* TODO: Replace text span with SVG styling later */
-
-.project-card h3 {
-    font-size: 1.75rem;
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
-}
-
-.project-description {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    flex-grow: 1; /* Makes description take available space, pushing buttons down */
-}
-
-.project-tech-stack {
-    font-size: 0.9rem;
-    color: var(--accent-primary); /* Use accent for tech stack */
-    margin-bottom: 1.5rem; /* Space before buttons */
-    font-style: italic;
-}
-
-.project-tech-stack strong {
-    color: var(--text-primary); /* Make "Tech:" label clearer */
-}
-
-.project-links {
-    display: flex;
-    justify-content: space-between; /* Puts space between the two buttons */
-    gap: 1rem; /* Space between buttons if they wrap or are close */
-    margin-top: auto; /* Pushes buttons to the bottom of the card */
-}
-
-/* General Button Styling (can be globalized later) */
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-flex; /* For icon alignment if added */
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem; /* Space between icon and text */
-    text-decoration: none; /* Ensure no underline from default <a> */
-    flex-grow: 1; /* Make buttons take equal width if desired */
-    max-width: 48%; /* Ensure they don't overlap if flex-grow is too much */
-    box-sizing: border-box;
-    word-wrap: break-word;
-}
-
-.btn-primary {
-    background-color: var(--accent-primary);
-    color: var(--primary-background); /* Dark text on light button */
-    border: 1px solid var(--accent-primary);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--accent-secondary);
-    border: 1px solid var(--accent-secondary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--accent-secondary);
-    color: var(--primary-background);
-    border-color: var(--accent-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
-}
-
-/* Responsive adjustments for Project cards */
-@media (max-width: 768px) { /* Mobile breakpoint */
-    #projects {
-        padding: 3rem 1rem;
-    }
-    #projects h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    .projects-grid {
-        gap: 1.5rem;
-    }
-    .project-card {
-        padding: 1.5rem;
-        overflow: hidden;
-        box-sizing: border-box;
-    }
-    .project-card h3 {
-        font-size: 1.5rem;
-    }
-    .project-description {
-        font-size: 0.95rem;
-    }
-    .project-links {
-        flex-direction: column; /* Stack buttons on mobile */
-        gap: 0.75rem;
-        margin-top: auto;
-        width: 100%;
-    }
-    .btn {
-        width: 100%; /* Make buttons full width on mobile */
-        max-width: 100%;
-        box-sizing: border-box;
-        margin: 0;
-    }
-}
-
-/* About Me Section Styling */
-#about {
-    padding: 4rem 2rem; /* Generous padding */
-    background-color: var(--secondary-background); /* Slightly different background if desired, or keep same as primary */
-    text-align: center; /* Center align the content */
-    border-bottom: 1px solid var(--subtle-accent); /* Consistent separator */
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block; /* Allows for pseudo-element underline */
-}
-
-/* Underline effect for section titles */
-#about h2::after {
-    content: '';
-    position: absolute;
-    width: 60%; /* Width of the underline */
-    height: 3px;
-    bottom: -10px; /* Space below the text */
-    left: 20%; /* Centering the underline */
-    background-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary); /* Glow for the underline */
-}
-
-#about p {
-    font-size: 1.1rem; /* Slightly larger for readability */
-    color: var(--text-secondary);
-    max-width: 720px; /* Optimal reading width */
-    margin: 0 auto; /* Center the paragraph */
-    line-height: 1.8; /* More spacing for a block of text */
-    font-weight: 300; /* Light weight for body text */
-}
-
-/* Responsive adjustments for About Me section */
-@media (max-width: 768px) { /* Mobile breakpoint */
-    #about {
-        padding: 3rem 1rem;
-    }
-
-    #about h2 {
-        font-size: 2rem;
-    }
-
-    #about p {
-        font-size: 1rem;
     }
 }
 
