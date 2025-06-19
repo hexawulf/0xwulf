@@ -71,13 +71,10 @@ footer {
     margin-top: 2rem;
 }
 
+/* FIXED: Remove ALL section borders */
 section {
     padding: 2rem 0;
-    /* Removed border-bottom to eliminate vertical divider lines */
-}
-
-section:last-of-type {
-    /* No border needed */
+    /* NO BORDERS - removed completely */
 }
 
 /* Hero Section Styling */
@@ -91,7 +88,7 @@ section:last-of-type {
     position: relative;
     overflow: hidden;
     background-color: var(--primary-background);
-    border-bottom: 2px solid var(--subtle-accent);
+    /* REMOVED: border-bottom */
 }
 
 #hero h1 {
@@ -170,18 +167,18 @@ section:last-of-type {
     }
 }
 
-/* UNIFIED SECTION STYLING - All sections same background */
+/* UNIFIED SECTION STYLING - All sections same background, NO BORDERS */
 #about, #projects, #skills, #contact {
     padding: 4rem 2rem;
-    background-color: var(--primary-background); /* Same background for all */
-    /* Removed border-bottom to eliminate vertical divider lines */
+    background-color: var(--primary-background);
+    /* NO BORDERS AT ALL */
 }
 
-/* UNIFIED SECTION HEADERS */
+/* UNIFIED SECTION HEADERS - ALL CENTERED */
 #about h2, #projects h2, #skills h2, #contact h2 {
     font-size: 2.5rem;
     color: var(--text-primary);
-    text-align: center;
+    text-align: center; /* FIXED: All headers centered */
     margin-bottom: 3rem;
     position: relative;
     display: inline-block;
@@ -213,11 +210,6 @@ section:last-of-type {
     text-align: center;
 }
 
-/* Center the About Me heading like other sections */
-#about h2 {
-    text-align: center;
-}
-
 #about p {
     font-size: 1.1rem;
     color: var(--text-secondary);
@@ -235,7 +227,7 @@ section:last-of-type {
 }
 
 .project-card {
-    background-color: var(--secondary-background); /* Lighter background */
+    background-color: var(--secondary-background);
     border: 1px solid var(--subtle-accent);
     border-radius: 8px;
     padding: 1.5rem;
@@ -295,11 +287,6 @@ section:last-of-type {
     text-align: center;
 }
 
-/* Center the Skills heading like other sections */
-#skills h2 {
-    text-align: center;
-}
-
 .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -308,15 +295,14 @@ section:last-of-type {
 }
 
 .skill-category {
-    background-color: var(--secondary-background); /* SAME as project cards */
+    background-color: var(--secondary-background);
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* SAME as project cards */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-/* EXACT SAME HOVER EFFECT as project cards */
 .skill-category:hover {
     transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
     box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
@@ -344,7 +330,7 @@ section:last-of-type {
     color: var(--text-secondary);
     padding: 0.4rem 0.6rem;
     margin-bottom: 0.4rem;
-    background-color: var(--primary-background); /* Darker background for list items */
+    background-color: var(--primary-background);
     border-radius: 4px;
     border-left: 3px solid var(--accent-primary);
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -358,10 +344,6 @@ section:last-of-type {
 }
 
 /* Contact Section - Clean Single Column */
-#contact h2 {
-    text-align: center;
-}
-
 .contact-container {
     display: grid;
     grid-template-columns: 1fr;
