@@ -203,9 +203,9 @@ section:last-of-type {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 3rem;
-    max-width: 1200px;
+    max-width: 720px;
     margin: 0 auto;
     padding: 0 20px;
     align-items: flex-start;
@@ -371,7 +371,6 @@ section:last-of-type {
 /* Responsive adjustments for Contact Section */
 @media (max-width: 1200px) {
     .contact-container {
-        grid-template-columns: 1fr;
         gap: 2rem;
         padding: 0 30px;
     }
@@ -387,7 +386,6 @@ section:last-of-type {
 
 @media (max-width: 992px) { /* Tablet and below */
     .contact-container {
-        grid-template-columns: 1fr; /* Stack info and form */
         gap: 2.5rem;
     }
     .contact-info {
@@ -454,9 +452,9 @@ section:last-of-type {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns for skill categories */
+    grid-template-columns: 1fr; /* Responsive columns for skill categories */
     gap: 2rem; /* Space between skill category blocks */
-    max-width: 1000px; /* Max width for the skills content */
+    max-width: 720px; /* Max width for the skills content */
     margin: 0 auto; /* Center the container */
     text-align: left; /* Align text to left within each category block */
 }
@@ -512,7 +510,6 @@ section:last-of-type {
         margin-bottom: 2rem;
     }
     .skills-container {
-        grid-template-columns: 1fr; /* Stack categories on mobile */
         gap: 1.5rem;
     }
     .skill-category {
@@ -559,9 +556,9 @@ section:last-of-type {
 .projects-grid {
     display: grid;
     /* Force a two column layout on larger screens for a 2x2 project grid */
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
     gap: 2rem; /* Space between cards */
-    max-width: 1200px; /* Max width of the grid itself */
+    max-width: 720px; /* Max width of the grid itself */
     margin: 0 auto; /* Center the grid */
 }
 
@@ -679,7 +676,6 @@ section:last-of-type {
         margin-bottom: 2rem;
     }
     .projects-grid {
-        grid-template-columns: 1fr; /* Stack cards on mobile */
         gap: 1.5rem;
     }
     .project-card {
