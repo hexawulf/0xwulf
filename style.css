@@ -53,7 +53,7 @@ a:hover {
 
 /* Basic Main Container Styling */
 main {
-    max-width: 1440px; /* Desktop breakpoint for now, will be refined */
+    max-width: 1440px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -86,43 +86,43 @@ section:last-of-type {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 80vh; /* Adjust as needed */
+    min-height: 80vh;
     text-align: center;
-    position: relative; /* For positioning pseudo-elements or animations later */
-    overflow: hidden; /* If particle animations go out of bounds */
-    background-color: var(--primary-background); /* Ensure hero has its own background */
-    border-bottom: 2px solid var(--subtle-accent); /* Distinct separator */
+    position: relative;
+    overflow: hidden;
+    background-color: var(--primary-background);
+    border-bottom: 2px solid var(--subtle-accent);
 }
 
 #hero h1 {
-    font-size: 3rem; /* Larger for impact */
+    font-size: 3rem;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
     font-weight: 700;
 }
 
 #hero p {
-    font-size: 1.5rem; /* Larger for impact */
+    font-size: 1.5rem;
     color: var(--text-secondary);
     margin-bottom: 1rem;
-    font-weight: 300; /* Light weight for subtitle effect */
+    font-weight: 300;
 }
 
 #hero img {
     width: 200px;
     height: 200px;
-    border-radius: 50%; /* Perfect circle - no longer overridden */
+    border-radius: 50%;
     object-fit: cover;
     margin-top: 2rem;
-    border: 4px solid var(--accent-primary); /* Thin blue border */
+    border: 4px solid var(--accent-primary);
     box-shadow:
         0 0 15px var(--accent-primary),
-        0 0 30px rgba(29, 161, 242, 0.3); /* Softer outer glow */
+        0 0 30px rgba(29, 161, 242, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 #hero img:hover {
-    transform: scale(1.05); /* Clean scale, no rotation */
+    transform: scale(1.05);
     box-shadow:
         0 0 25px var(--accent-primary),
         0 0 45px rgba(29, 161, 242, 0.4);
@@ -136,20 +136,18 @@ section:last-of-type {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Behind other content */
-    /* The canvas element will be appended here by JS */
+    z-index: -1;
 }
 
 #hero .particles canvas {
-    display: block; /* Ensure canvas takes up the div space */
+    display: block;
     width: 100%;
     height: 100%;
 }
 
 /* Placeholder for typewriter animation - to be implemented later */
 #hero .typewriter-container {
-    /* This container helps in positioning or managing the typewriter text if needed */
-    min-height: 3em; /* Reserve space for two lines of text to prevent layout shifts */
+    min-height: 3em;
 }
 
 #hero .typewriter-text {
@@ -160,7 +158,7 @@ section:last-of-type {
 #hero .cursor {
     display: inline-block;
     width: 10px;
-    height: 1.5rem; /* Should match the line-height or font-size of the P tag */
+    height: 1.5rem;
     background-color: var(--accent-primary);
     margin-left: 5px;
     animation: blink 1s steps(1) infinite;
@@ -172,76 +170,19 @@ section:last-of-type {
     }
 }
 
-/* About Me Section Styling - FIXED with consistent width container */
-#about {
+/* UNIFIED SECTION STYLING - All sections same background */
+#about, #projects, #skills, #contact {
     padding: 4rem 2rem;
-    background-color: var(--secondary-background);
-    text-align: center;
+    background-color: var(--primary-background); /* Same background for all */
     border-bottom: 1px solid var(--subtle-accent);
 }
 
-#about h2 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    position: relative;
-    display: inline-block;
+#contact {
+    border-bottom: none; /* Last section */
 }
 
-#about h2::after {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 3px;
-    bottom: -10px;
-    left: 20%;
-    background-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
-}
-
-/* CREATE A CONTAINER for About Me content to match other sections */
-.about-container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-#about p {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-weight: 300;
-    margin: 0; /* Remove auto margins since container handles centering */
-}
-
-/* Responsive adjustments for About Me section */
-@media (max-width: 768px) {
-    #about {
-        padding: 3rem 1rem;
-    }
-
-    #about h2 {
-        font-size: 2rem;
-    }
-
-    #about p {
-        font-size: 1rem;
-    }
-
-    .about-container {
-        padding: 0 15px;
-    }
-}
-
-/* Featured Projects Showcase Styling - FIXED with consistent width */
-#projects {
-    padding: 4rem 2rem;
-    background-color: var(--primary-background);
-    border-bottom: 1px solid var(--subtle-accent);
-}
-
-#projects h2 {
+/* UNIFIED SECTION HEADERS */
+#about h2, #projects h2, #skills h2, #contact h2 {
     font-size: 2.5rem;
     color: var(--text-primary);
     text-align: center;
@@ -252,7 +193,7 @@ section:last-of-type {
     transform: translateX(-50%);
 }
 
-#projects h2::after {
+#about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
     content: '';
     position: absolute;
     width: 60%;
@@ -263,24 +204,43 @@ section:last-of-type {
     box-shadow: 0 0 8px var(--accent-primary);
 }
 
+/* UNIFIED CONTAINER STYLING - All sections same width */
+.about-container, .projects-grid, .skills-container, .contact-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* About Me Section - Clean and Simple */
+#about {
+    text-align: center;
+}
+
+#about p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-weight: 300;
+    margin: 0;
+}
+
+/* Featured Projects - Clean Grid */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    max-width: 720px; /* Match About Me width exactly */
-    margin: 0 auto;
-    padding: 0 20px; /* Match About Me container padding */
-    box-sizing: border-box;
+    text-align: left;
 }
 
 .project-card {
-    background-color: var(--secondary-background);
+    background-color: var(--secondary-background); /* Lighter background */
     border: 1px solid var(--subtle-accent);
     border-radius: 8px;
-    padding: 1.5rem; /* Slightly smaller padding for tighter layout */
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 }
@@ -292,20 +252,20 @@ section:last-of-type {
 }
 
 .project-icon {
-    font-size: 2rem; /* Slightly smaller for tighter layout */
+    font-size: 2rem;
     color: var(--accent-primary);
     margin-bottom: 0.75rem;
     text-align: center;
 }
 
 .project-card h3 {
-    font-size: 1.5rem; /* Smaller for better fit */
+    font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .project-description {
-    font-size: 0.9rem; /* Smaller text for better fit */
+    font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.5;
     margin-bottom: 0.75rem;
@@ -313,7 +273,7 @@ section:last-of-type {
 }
 
 .project-tech-stack {
-    font-size: 0.8rem; /* Smaller tech stack text */
+    font-size: 0.8rem;
     color: var(--accent-primary);
     margin-bottom: 1rem;
     font-style: italic;
@@ -325,136 +285,32 @@ section:last-of-type {
 
 .project-links {
     display: flex;
-    gap: 0.5rem; /* Smaller gap between buttons */
+    gap: 0.5rem;
     margin-top: auto;
 }
 
-/* General Button Styling (can be globalized later) */
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-flex; /* For icon alignment if added */
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem; /* Space between icon and text */
-    text-decoration: none; /* Ensure no underline from default <a> */
-    flex-grow: 1; /* Make buttons take equal width if desired */
-    max-width: 48%; /* Ensure they don't overlap if flex-grow is too much */
-    box-sizing: border-box;
-    word-wrap: break-word;
-}
-
-.btn-primary {
-    background-color: var(--accent-primary);
-    color: var(--primary-background); /* Dark text on light button */
-    border: 1px solid var(--accent-primary);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--accent-secondary);
-    border: 1px solid var(--accent-secondary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--accent-secondary);
-    color: var(--primary-background);
-    border-color: var(--accent-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 0 10px var(--accent-glow); /* Neon glow expansion */
-}
-
-/* Responsive adjustments for Project cards */
-@media (max-width: 768px) {
-    #projects {
-        padding: 3rem 1rem;
-    }
-    #projects h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    .projects-grid {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        gap: 1.5rem;
-        padding: 0 15px;
-    }
-    .project-card {
-        padding: 1.5rem;
-    }
-    .project-card h3 {
-        font-size: 1.5rem;
-    }
-    .project-description {
-        font-size: 0.95rem;
-    }
-    .project-links {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-    .btn {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-/* Skills Matrix Styling - FIXED with proper hover effects and consistent width */
+/* Skills Section - Matching Project Cards Style */
 #skills {
-    padding: 4rem 2rem;
-    background-color: var(--secondary-background);
-    border-bottom: 1px solid var(--subtle-accent);
     text-align: center;
-}
-
-#skills h2 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 3rem;
-    position: relative;
-    display: inline-block;
-}
-
-#skills h2::after {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 3px;
-    bottom: -10px;
-    left: 20%;
-    background-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
 }
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid layout */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    max-width: 720px; /* Match About Me width exactly */
-    margin: 0 auto;
-    padding: 0 20px; /* Match About Me container padding */
-    box-sizing: border-box;
     text-align: left;
 }
 
 .skill-category {
-    background-color: var(--primary-background);
+    background-color: var(--secondary-background); /* SAME as project cards */
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--subtle-accent);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* SAME as project cards */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-/* MATCH THE PROJECT CARDS HOVER EFFECT EXACTLY */
+/* EXACT SAME HOVER EFFECT as project cards */
 .skill-category:hover {
     transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
     box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
@@ -482,7 +338,7 @@ section:last-of-type {
     color: var(--text-secondary);
     padding: 0.4rem 0.6rem;
     margin-bottom: 0.4rem;
-    background-color: var(--secondary-background);
+    background-color: var(--primary-background); /* Darker background for list items */
     border-radius: 4px;
     border-left: 3px solid var(--accent-primary);
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -495,70 +351,16 @@ section:last-of-type {
     transform: translateX(5px);
 }
 
-/* Responsive adjustments for Skills Matrix */
-@media (max-width: 768px) {
-    #skills {
-        padding: 3rem 1rem;
-    }
-    #skills h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    .skills-container {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        gap: 1.5rem;
-        padding: 0 15px;
-    }
-    .skill-category {
-        padding: 1.5rem;
-    }
-    .skill-category h3 {
-        font-size: 1.5rem;
-    }
-    .skill-category li {
-        font-size: 1rem;
-        padding: 0.6rem 0.9rem;
-    }
-}
-
-/* Contact Section Styling - FIXED with consistent width */
-#contact {
-    padding: 4rem 2rem;
-    background-color: var(--primary-background);
-    border-bottom: none;
-}
-
+/* Contact Section - Clean Single Column */
 #contact h2 {
-    font-size: 2.5rem;
-    color: var(--text-primary);
     text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#contact h2::after {
-    content: '';
-    position: absolute;
-    width: 60%;
-    height: 3px;
-    bottom: -10px;
-    left: 20%;
-    background-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
-    max-width: 720px; /* Match About Me width exactly */
-    margin: 0 auto;
-    padding: 0 20px; /* Match About Me container padding */
     align-items: flex-start;
-    box-sizing: border-box;
 }
 
 .contact-info p {
@@ -572,6 +374,7 @@ section:last-of-type {
     color: var(--accent-primary);
     font-weight: 500;
 }
+
 .contact-info a:hover {
     color: var(--accent-secondary);
 }
@@ -579,17 +382,16 @@ section:last-of-type {
 .social-links {
     margin-top: 2rem;
     display: flex;
-    gap: 1.5rem; /* Space between social icons */
+    gap: 1.5rem;
 }
 
-/* General styling for all links within .social-links */
 .social-links a {
     color: var(--text-secondary);
     font-size: 1.2rem;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem; /* Space between icon and text, or just for alignment */
+    gap: 0.5rem;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -598,25 +400,19 @@ section:last-of-type {
     transform: translateY(-2px);
 }
 
-/* Styling specifically for icons within any link in .social-links */
 .social-links a i {
-    font-size: 1.5rem; /* Icon size */
-    color: var(--accent-primary); /* Icon color */
-    transition: color 0.3s ease; /* Smooth color transition for icon */
+    font-size: 1.5rem;
+    color: var(--accent-primary);
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover i {
-    color: var(--accent-hover); /* Icon color on hover */
+    color: var(--accent-hover);
 }
 
-/* The .social-icon class can be used if specific links (e.g., those with icons)
-   need further distinction, but the base styling is now on .social-links a.
-   If .social-icon is still on <a> tags with icons, it will inherit .social-links a styles.
-   Additional .social-icon specific rules can be added here if necessary. */
 .social-icon {
-    /* e.g., if icons need slightly different alignment or spacing not covered by 'gap' */
+    /* Additional styling if needed */
 }
-
 
 /* Contact Form Styling */
 .contact-form {
@@ -647,13 +443,13 @@ section:last-of-type {
 .form-group textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    box-sizing: border-box; /* ADDED */
+    box-sizing: border-box;
     border-radius: 5px;
     border: 1px solid var(--subtle-accent);
-    background-color: var(--primary-background); /* Dark input fields */
+    background-color: var(--primary-background);
     color: var(--text-primary);
     font-size: 1rem;
-    font-family: inherit; /* Use body font */
+    font-family: inherit;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -666,11 +462,56 @@ section:last-of-type {
 }
 
 .form-group textarea {
-    resize: vertical; /* Allow vertical resize, disable horizontal */
+    resize: vertical;
     min-height: 120px;
 }
 
-.btn-submit { /* Extends .btn styling if available, or define fully */
+/* Button Styling */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    flex-grow: 1;
+    max-width: 48%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--primary-background);
+    border: 1px solid var(--accent-primary);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--accent-secondary);
+    border: 1px solid var(--accent-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-secondary);
+    color: var(--primary-background);
+    border-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.btn-submit {
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     font-weight: 500;
@@ -679,7 +520,7 @@ section:last-of-type {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    width: 100%; /* Full width submit button */
+    width: 100%;
     font-size: 1.1rem;
     background-color: var(--accent-primary);
     color: var(--primary-background);
@@ -715,83 +556,27 @@ section:last-of-type {
   40% { opacity: 1; transform: scale(1); }
 }
 
-
-/* Responsive adjustments for Contact Section */
-@media (max-width: 1200px) {
-    .contact-container {
-        gap: 2rem;
-        padding: 0 30px;
-    }
-
-    .contact-info {
-        text-align: center;
-    }
-
-    .social-links {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 992px) { /* Tablet and below */
-    .contact-container {
-        gap: 2.5rem;
-    }
-    .contact-info {
-        text-align: center; /* Center info text on smaller screens */
-    }
-    .social-links {
-        justify-content: center; /* Center social links */
-    }
-    /* Ensure .contact-form specific styles for 992px are here if needed, or adjust existing ones */
-}
-
-/* Added specific breakpoint for .contact-container as per request */
-@media (max-width: 1024px) {
-    .contact-container {
-        padding: 0 40px; /* ADDED */
-    }
-}
-
-@media (max-width: 768px) { /* Mobile breakpoint */
-    #contact {
-        padding: 3rem 1rem;
-    }
-    #contact h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    .contact-form {
-        padding: 1.5rem;
-        /* Other properties like background, border-radius should remain */
-    }
-
-    .contact-container {
-        padding: 0 15px;
-        /* Other properties should remain as they are or as overridden by this media query */
-    }
-}
-
 /* Navigation Bar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem; /* Vertical and horizontal padding */
+    padding: 1rem 2rem;
     width: 100%;
-    max-width: 1440px; /* Consistent with main content max-width */
-    margin: 0 auto; /* Center the navbar content */
-    position: relative; /* For z-index or other positioning needs */
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
 }
 
 header {
     position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure it stays on top of other content */
-    background-color: rgba(26, 26, 46, 0.8); /* Midnight blue with transparency - Glass-morphism base */
-    backdrop-filter: blur(10px); /* Backdrop blur for glass-morphism */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    z-index: 1000;
+    background-color: rgba(26, 26, 46, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--subtle-accent);
-    padding: 0; /* Reset header padding if any, navbar will handle it */
+    padding: 0;
 }
 
 .nav-logo a {
@@ -814,25 +599,24 @@ header {
 }
 
 .nav-item {
-    margin-left: 2rem; /* Space between menu items */
+    margin-left: 2rem;
 }
 
 .nav-link {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500; /* Medium weight */
-    padding: 0.5rem 0; /* Padding for hover effect */
-    position: relative; /* For underline animation */
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
     color: var(--accent-primary);
-    text-decoration: none; /* Remove default underline */
+    text-decoration: none;
 }
 
-/* Underline animation on hover */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -842,17 +626,15 @@ header {
     left: 0;
     background-color: var(--accent-primary);
     transition: width 0.3s ease-in-out;
-    box-shadow: 0 0 5px var(--accent-primary); /* Neon glow */
+    box-shadow: 0 0 5px var(--accent-primary);
 }
 
 .nav-link:hover::after {
     width: 100%;
 }
 
-
-/* Hamburger Menu - Basic Structure (JS needed for functionality) */
 .hamburger {
-    display: none; /* Hidden on desktop */
+    display: none;
     cursor: pointer;
 }
 
@@ -865,45 +647,85 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-/* Responsive Breakpoints for Navigation (example for mobile) */
-@media (max-width: 768px) { /* Mobile breakpoint */
-    .nav-menu {
-        position: fixed; /* Changed from absolute to fixed for better viewport handling */
-        left: -100%; /* Off-screen initially */
-        top: 0; /* Align to the top, adjust if header height changes */
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about, #projects, #skills, #contact {
+        padding: 3rem 1rem;
+    }
+
+    #about h2, #projects h2, #skills h2, #contact h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-container, .projects-grid, .skills-container, .contact-container {
+        padding: 0 15px;
+    }
+
+    .projects-grid, .skills-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-links {
         flex-direction: column;
-        background-color: var(--secondary-background); /* Matches header, but could be darker */
-        width: 75%; /* Adjust as needed */
-        height: 100vh; /* Full height */
+        gap: 0.75rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .contact-info {
         text-align: center;
-        transition: left 0.3s ease-in-out; /* Smooth slide-in */
-        padding-top: 4rem; /* Space for close button or logo */
-        box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Subtle shadow */
-        z-index: 999; /* Below header but above content */
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Mobile Navigation */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;
+        background-color: var(--secondary-background);
+        width: 75%;
+        height: 100vh;
+        text-align: center;
+        transition: left 0.3s ease-in-out;
+        padding-top: 4rem;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        z-index: 999;
     }
 
     .nav-menu.active {
-        left: 0; /* Slide in */
+        left: 0;
     }
 
     .nav-item {
-        margin: 1.5rem 0; /* Vertical spacing for mobile menu items */
+        margin: 1.5rem 0;
     }
 
     .nav-link {
-        font-size: 1.2rem; /* Larger for easier tapping */
+        font-size: 1.2rem;
     }
 
     .nav-link.resume-link {
-        padding: 0.75rem 1.5rem; /* Larger padding for mobile */
+        padding: 0.75rem 1.5rem;
     }
 
     .hamburger {
-        display: block; /* Show hamburger on mobile */
-        z-index: 1001; /* Ensure hamburger is above mobile menu when closed, and clickable */
+        display: block;
+        z-index: 1001;
     }
 
-    /* Hamburger Animation when active (e.g., turns to 'X') */
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
@@ -912,5 +734,39 @@ header {
     }
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Additional responsive breakpoints */
+@media (max-width: 1200px) {
+    .contact-container {
+        gap: 2rem;
+        padding: 0 30px;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-container, .projects-grid, .skills-container, .contact-container {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        gap: 2.5rem;
+    }
+    .contact-info {
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center;
     }
 }
