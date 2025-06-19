@@ -73,11 +73,11 @@ footer {
 
 section {
     padding: 2rem 0;
-    border-bottom: 1px solid var(--border);
+    /* Removed border-bottom to eliminate vertical divider lines */
 }
 
 section:last-of-type {
-    border-bottom: none;
+    /* No border needed */
 }
 
 /* Hero Section Styling */
@@ -174,11 +174,7 @@ section:last-of-type {
 #about, #projects, #skills, #contact {
     padding: 4rem 2rem;
     background-color: var(--primary-background); /* Same background for all */
-    border-bottom: 1px solid var(--subtle-accent);
-}
-
-#contact {
-    border-bottom: none; /* Last section */
+    /* Removed border-bottom to eliminate vertical divider lines */
 }
 
 /* UNIFIED SECTION HEADERS */
@@ -214,6 +210,11 @@ section:last-of-type {
 
 /* About Me Section - Clean and Simple */
 #about {
+    text-align: center;
+}
+
+/* Center the About Me heading like other sections */
+#about h2 {
     text-align: center;
 }
 
@@ -291,6 +292,11 @@ section:last-of-type {
 
 /* Skills Section - Matching Project Cards Style */
 #skills {
+    text-align: center;
+}
+
+/* Center the Skills heading like other sections */
+#skills h2 {
     text-align: center;
 }
 
