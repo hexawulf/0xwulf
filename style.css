@@ -172,12 +172,12 @@ section:last-of-type {
     }
 }
 
-/* About Me Section Styling */
+/* About Me Section Styling - FIXED with consistent width container */
 #about {
-    padding: 4rem 2rem; /* Generous padding */
-    background-color: var(--secondary-background); /* Slightly different background if desired, or keep same as primary */
-    text-align: center; /* Center align the content */
-    border-bottom: 1px solid var(--subtle-accent); /* Consistent separator */
+    padding: 4rem 2rem;
+    background-color: var(--secondary-background);
+    text-align: center;
+    border-bottom: 1px solid var(--subtle-accent);
 }
 
 #about h2 {
@@ -185,32 +185,38 @@ section:last-of-type {
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     position: relative;
-    display: inline-block; /* Allows for pseudo-element underline */
+    display: inline-block;
 }
 
-/* Underline effect for section titles */
 #about h2::after {
     content: '';
     position: absolute;
-    width: 60%; /* Width of the underline */
+    width: 60%;
     height: 3px;
-    bottom: -10px; /* Space below the text */
-    left: 20%; /* Centering the underline */
+    bottom: -10px;
+    left: 20%;
     background-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary); /* Glow for the underline */
+    box-shadow: 0 0 8px var(--accent-primary);
+}
+
+/* CREATE A CONTAINER for About Me content to match other sections */
+.about-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 #about p {
-    font-size: 1.1rem; /* Slightly larger for readability */
+    font-size: 1.1rem;
     color: var(--text-secondary);
-    max-width: 720px; /* Optimal reading width */
-    margin: 0 auto; /* Center the paragraph */
-    line-height: 1.8; /* More spacing for a block of text */
-    font-weight: 300; /* Light weight for body text */
+    line-height: 1.8;
+    font-weight: 300;
+    margin: 0; /* Remove auto margins since container handles centering */
 }
 
 /* Responsive adjustments for About Me section */
-@media (max-width: 768px) { /* Mobile breakpoint */
+@media (max-width: 768px) {
     #about {
         padding: 3rem 1rem;
     }
@@ -222,9 +228,13 @@ section:last-of-type {
     #about p {
         font-size: 1rem;
     }
+
+    .about-container {
+        padding: 0 15px;
+    }
 }
 
-/* Featured Projects Showcase Styling - FIXED */
+/* Featured Projects Showcase Styling - FIXED with consistent width */
 #projects {
     padding: 4rem 2rem;
     background-color: var(--primary-background);
@@ -255,11 +265,12 @@ section:last-of-type {
 
 .projects-grid {
     display: grid;
-    /* Keep 2x2 grid but within 720px container */
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem; /* Slightly smaller gap for 720px width */
-    max-width: 720px; /* Match About Me width */
-    margin: 0 auto; /* Center the grid */
+    gap: 1.5rem;
+    max-width: 720px; /* Match About Me width exactly */
+    margin: 0 auto;
+    padding: 0 20px; /* Match About Me container padding */
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -375,6 +386,7 @@ section:last-of-type {
     .projects-grid {
         grid-template-columns: 1fr; /* Single column on mobile */
         gap: 1.5rem;
+        padding: 0 15px;
     }
     .project-card {
         padding: 1.5rem;
@@ -395,7 +407,7 @@ section:last-of-type {
     }
 }
 
-/* Skills Matrix Styling - FIXED to 2x2 grid */
+/* Skills Matrix Styling - FIXED with proper hover effects and consistent width */
 #skills {
     padding: 4rem 2rem;
     background-color: var(--secondary-background);
@@ -425,35 +437,38 @@ section:last-of-type {
 .skills-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2x2 grid layout */
-    gap: 1.5rem; /* Match projects grid gap */
-    max-width: 720px; /* Match About Me width */
+    gap: 1.5rem;
+    max-width: 720px; /* Match About Me width exactly */
     margin: 0 auto;
+    padding: 0 20px; /* Match About Me container padding */
+    box-sizing: border-box;
     text-align: left;
 }
 
 .skill-category {
     background-color: var(--primary-background);
-    padding: 1.5rem; /* Slightly smaller padding for better fit */
+    padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--subtle-accent);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
+/* MATCH THE PROJECT CARDS HOVER EFFECT EXACTLY */
 .skill-category:hover {
-    transform: translateY(-5px); /* Subtle hover effect */
-    box-shadow: 0 0 15px var(--accent-primary), 0 8px 20px rgba(0,0,0,0.2);
+    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
     border-color: var(--accent-primary);
 }
 
 .skill-category h3 {
-    font-size: 1.5rem; /* Smaller for better fit in grid */
+    font-size: 1.5rem;
     color: var(--accent-primary);
     margin-bottom: 1rem;
     border-bottom: 2px solid var(--subtle-accent);
     padding-bottom: 0.5rem;
     font-weight: 500;
-    text-align: center; /* Center the category titles */
+    text-align: center;
 }
 
 .skill-category ul {
@@ -463,7 +478,7 @@ section:last-of-type {
 }
 
 .skill-category li {
-    font-size: 0.95rem; /* Slightly smaller for better fit */
+    font-size: 0.95rem;
     color: var(--text-secondary);
     padding: 0.4rem 0.6rem;
     margin-bottom: 0.4rem;
@@ -492,6 +507,7 @@ section:last-of-type {
     .skills-container {
         grid-template-columns: 1fr; /* Single column on mobile */
         gap: 1.5rem;
+        padding: 0 15px;
     }
     .skill-category {
         padding: 1.5rem;
@@ -505,14 +521,14 @@ section:last-of-type {
     }
 }
 
-/* Contact Section Styling */
+/* Contact Section Styling - FIXED with consistent width */
 #contact {
     padding: 4rem 2rem;
-    background-color: var(--primary-background); /* Consistent background */
-    border-bottom: none; /* Typically the last main section */
+    background-color: var(--primary-background);
+    border-bottom: none;
 }
 
-#contact h2 { /* Section Title */
+#contact h2 {
     font-size: 2.5rem;
     color: var(--text-primary);
     text-align: center;
@@ -523,7 +539,7 @@ section:last-of-type {
     transform: translateX(-50%);
 }
 
-#contact h2::after { /* Consistent underline style */
+#contact h2::after {
     content: '';
     position: absolute;
     width: 60%;
@@ -536,11 +552,11 @@ section:last-of-type {
 
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr; /* Single column */
+    grid-template-columns: 1fr;
     gap: 3rem;
-    max-width: 720px; /* Match About Me width */
+    max-width: 720px; /* Match About Me width exactly */
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* Match About Me container padding */
     align-items: flex-start;
     box-sizing: border-box;
 }
