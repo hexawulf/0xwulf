@@ -174,7 +174,7 @@ section {
     /* NO BORDERS AT ALL */
 }
 
-/* FIXED SECTION HEADERS - Lines match content width perfectly */
+/* FIXED SECTION HEADERS - Lines now properly aligned with content */
 #about h2, #projects h2, #skills h2, #contact h2 {
     font-size: 2.5rem;
     color: var(--text-primary);
@@ -182,17 +182,12 @@ section {
     margin-bottom: 3rem;
     position: relative;
     display: block;
-    /* Remove any width constraints from the header itself */
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
     content: '';
     position: absolute;
-    width: 680px; /* Fixed width to match content containers exactly */
-    max-width: calc(100vw - 80px); /* Responsive fallback */
+    width: 400px; /* Conservative width that aligns well with content */
     height: 3px;
     bottom: -10px;
     left: 50%;
@@ -202,20 +197,6 @@ section {
     border-radius: 1px;
 }
 
-/* Responsive adjustments for the lines */
-@media (max-width: 768px) {
-    #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
-        width: calc(100vw - 50px); /* Mobile: account for padding */
-        max-width: 680px;
-    }
-}
-
-@media (max-width: 1024px) and (min-width: 769px) {
-    #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
-        width: 600px; /* Tablet: slightly smaller */
-        max-width: calc(100vw - 100px);
-    }
-}
 /* UNIFIED CONTAINER STYLING - All sections same width */
 .about-container, .projects-grid, .skills-container, .contact-container {
     max-width: 720px;
@@ -661,13 +642,12 @@ header {
     }
 
     #about h2, #projects h2, #skills h2, #contact h2 {
-        padding: 0 15px; /* Match mobile container padding */
         font-size: 2rem;
         margin-bottom: 2rem;
     }
     
     #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
-        max-width: calc(100vw - 60px); /* Account for mobile padding */
+        width: 300px; /* Smaller line for mobile */
     }
 
     .about-container, .projects-grid, .skills-container, .contact-container {
@@ -766,12 +746,8 @@ header {
 }
 
 @media (max-width: 1024px) {
-    #about h2, #projects h2, #skills h2, #contact h2 {
-        padding: 0 40px; /* Match tablet container padding */
-    }
-    
     #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
-        max-width: 640px; /* Slightly reduce for tablet */
+        width: 350px; /* Slightly smaller for tablet */
     }
 
     .about-container, .projects-grid, .skills-container, .contact-container {
