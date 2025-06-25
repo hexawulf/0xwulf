@@ -188,7 +188,7 @@ section {
 #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
     content: '';
     position: absolute;
-    width: 60%;
+    width: 40%;
     height: 3px;
     bottom: -10px;
     left: 50%; /* CHANGED to center the underline properly */
