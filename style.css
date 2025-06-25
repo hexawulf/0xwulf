@@ -174,27 +174,33 @@ section {
     /* NO BORDERS AT ALL */
 }
 
-/* UNIFIED SECTION HEADERS - ALL PROPERLY CENTERED */
+/* FIXED SECTION HEADERS - Lines match content width perfectly */
 #about h2, #projects h2, #skills h2, #contact h2 {
     font-size: 2.5rem;
     color: var(--text-primary);
     text-align: center;
     margin-bottom: 3rem;
     position: relative;
-    display: block; /* CHANGED from inline-block */
-    /* REMOVED left: 50% and transform that were causing offset */
+    display: block;
+    /* Container to match content width */
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px; /* Match container padding */
 }
 
 #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
     content: '';
     position: absolute;
-    width: 60%;
+    width: 100%; /* Now 100% of the constrained header container */
+    max-width: 680px; /* Slightly less than container for visual breathing room */
     height: 3px;
     bottom: -10px;
-    left: 50%; /* CHANGED to center the underline properly */
-    transform: translateX(-50%); /* ADDED to center the underline */
-    background-color: var(--accent-primary);
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
     box-shadow: 0 0 8px var(--accent-primary);
+    border-radius: 1px;
 }
 
 /* UNIFIED CONTAINER STYLING - All sections same width */
@@ -642,8 +648,13 @@ header {
     }
 
     #about h2, #projects h2, #skills h2, #contact h2 {
+        padding: 0 15px; /* Match mobile container padding */
         font-size: 2rem;
         margin-bottom: 2rem;
+    }
+    
+    #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
+        max-width: calc(100vw - 60px); /* Account for mobile padding */
     }
 
     .about-container, .projects-grid, .skills-container, .contact-container {
@@ -742,6 +753,14 @@ header {
 }
 
 @media (max-width: 1024px) {
+    #about h2, #projects h2, #skills h2, #contact h2 {
+        padding: 0 40px; /* Match tablet container padding */
+    }
+    
+    #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
+        max-width: 640px; /* Slightly reduce for tablet */
+    }
+
     .about-container, .projects-grid, .skills-container, .contact-container {
         padding: 0 40px;
     }
