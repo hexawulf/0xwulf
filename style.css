@@ -215,7 +215,7 @@ section {
         width: 600px; /* Tablet: slightly smaller */
         max-width: calc(100vw - 100px);
     }
-
+}
 /* UNIFIED CONTAINER STYLING - All sections same width */
 .about-container, .projects-grid, .skills-container, .contact-container {
     max-width: 720px;
