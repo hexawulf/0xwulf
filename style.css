@@ -182,18 +182,17 @@ section {
     margin-bottom: 3rem;
     position: relative;
     display: block;
-    /* Container to match content width */
-    max-width: 720px;
+    /* Remove any width constraints from the header itself */
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 20px; /* Match container padding */
 }
 
 #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
     content: '';
     position: absolute;
-    width: 100%; /* Now 100% of the constrained header container */
-    max-width: 680px; /* Slightly less than container for visual breathing room */
+    width: 680px; /* Fixed width to match content containers exactly */
+    max-width: calc(100vw - 80px); /* Responsive fallback */
     height: 3px;
     bottom: -10px;
     left: 50%;
@@ -202,6 +201,20 @@ section {
     box-shadow: 0 0 8px var(--accent-primary);
     border-radius: 1px;
 }
+
+/* Responsive adjustments for the lines */
+@media (max-width: 768px) {
+    #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
+        width: calc(100vw - 50px); /* Mobile: account for padding */
+        max-width: 680px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
+        width: 600px; /* Tablet: slightly smaller */
+        max-width: calc(100vw - 100px);
+    }
 
 /* UNIFIED CONTAINER STYLING - All sections same width */
 .about-container, .projects-grid, .skills-container, .contact-container {
