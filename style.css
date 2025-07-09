@@ -222,6 +222,10 @@ section {
     margin: 0 auto;
     /* padding: 0 20px; /* Remove this to rely on section padding */
     box-sizing: border-box;
+    /* Common grid properties */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default 3-column layout */
+    gap: 2rem; /* Consistent gap */
 }
 
 
@@ -238,14 +242,10 @@ section {
     margin: 0;
 }
 
-/* Featured Projects - Responsive Auto-Fit Grid */
+/* Projects Grid Specifics */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem; /* Increased gap */
-    text-align: left;
-    /* Ensure the container itself can expand if needed, though max-width is on .projects-grid */
-    /* max-width: 100%; Remove if .projects-grid should be constrained by its parent */
+    text-align: left; /* Retain if necessary, though card content usually handles alignment */
+    /* display, grid-template-columns, and gap are now in the common rule */
 }
 
 .project-card {
@@ -339,7 +339,7 @@ section {
 
 /* Featured Project Styling */
 .featured-project {
-    grid-column: span 2; /* Span two columns */
+    /* grid-column: span 2; /* REMOVED - No longer spans columns */
     /* Slightly larger, but be mindful of grid behavior with minmax */
     /* Consider adjusting minmax(320px, 1fr) if this causes issues, */
     /* or use transform: scale(1.02) for a subtle size increase. */
@@ -376,12 +376,10 @@ section {
     text-align: center;
 }
 
+/* Skills Container Specifics */
 .skills-container {
-    display: grid;
-    /* Re-using project grid styling for consistency */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem; /* Matching project grid gap */
-    text-align: left;
+    text-align: left; /* Retain if necessary */
+    /* display, grid-template-columns, and gap are now in the common rule */
 }
 
 .skill-category {
@@ -434,12 +432,10 @@ section {
 }
 
 /* Contact Section - Card Layout */
+/* Contact Container Specifics */
 .contact-container {
-    display: grid;
-    /* Re-using project grid styling for consistency */
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem; /* Matching project grid gap */
     align-items: flex-start; /* Keep items aligned to the top if they have different heights */
+    /* display, grid-template-columns, and gap are now in the common rule */
 }
 
 .contact-info-card {
@@ -759,9 +755,9 @@ header {
         padding: 0 15px;
     }
 
-    .projects-grid, .skills-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .projects-grid, .skills-container, .contact-container { /* Added .contact-container */
+        grid-template-columns: 1fr; /* 1 column for mobile */
+        gap: 1.5rem; /* Consistent gap for mobile */
     }
 
     .project-links {
@@ -852,7 +848,13 @@ header {
 
 @media (max-width: 1024px) {
     .about-container, .projects-grid, .skills-container, .contact-container {
-        padding: 0 40px;
+        padding: 0 40px; /* Existing padding adjustment */
+    }
+
+    /* Tablet: 2-column layout for grids */
+    .projects-grid, .skills-container, .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Gap will remain 2rem as inherited from base, which is fine */
     }
 }
 
