@@ -185,6 +185,17 @@ section {
     /* REMOVED left: 50% and transform that were causing offset */
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
     content: '';
     position: absolute;
@@ -197,13 +208,22 @@ section {
     box-shadow: 0 0 8px var(--accent-primary);
 }
 
-/* UNIFIED CONTAINER STYLING - All sections same width */
-.about-container, .projects-grid, .skills-container, .contact-container {
+/* UNIFIED CONTAINER STYLING */
+.about-container { /* Text content, can remain narrower for readability */
     max-width: 720px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px; /* Keep padding for text block */
     box-sizing: border-box;
 }
+
+.projects-grid, .skills-container, .contact-container {
+    /* Allow these grid containers to expand more to utilize auto-fit */
+    max-width: 1200px; /* Or match main's max-width, e.g., 1440px if desired */
+    margin: 0 auto;
+    /* padding: 0 20px; /* Remove this to rely on section padding */
+    box-sizing: border-box;
+}
+
 
 /* About Me Section - Clean and Simple */
 #about {
@@ -218,15 +238,18 @@ section {
     margin: 0;
 }
 
-/* Featured Projects - Clean Grid */
+/* Featured Projects - Responsive Auto-Fit Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; /* Increased gap */
     text-align: left;
+    /* Ensure the container itself can expand if needed, though max-width is on .projects-grid */
+    /* max-width: 100%; Remove if .projects-grid should be constrained by its parent */
 }
 
 .project-card {
+    position: relative; /* For badge positioning */
     background-color: var(--secondary-background);
     border: 1px solid var(--subtle-accent);
     border-radius: 8px;
@@ -236,7 +259,21 @@ section {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
+
+    /* Animation */
+    opacity: 0; /* Start hidden */
+    animation: fadeInUp 0.5s ease-out forwards;
 }
+
+/* Staggered animation delays */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+/* Add more if there are more projects, or consider a JS solution for dynamic delays */
+
 
 .project-card:hover {
     transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
@@ -266,21 +303,73 @@ section {
 }
 
 .project-tech-stack {
-    font-size: 0.8rem;
-    color: var(--accent-primary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Spacing between tags */
     margin-bottom: 1rem;
-    font-style: italic;
+    /* font-style: italic; REMOVED - no longer italic */
 }
 
-.project-tech-stack strong {
+/* .project-tech-stack strong { REMOVED - no longer using strong element here
     color: var(--text-primary);
+} */
+
+.tech-tag {
+    background-color: var(--subtle-accent); /* Dark purple from existing palette */
+    color: var(--text-accent); /* Light blue/sky blue text */
+    padding: 0.3rem 0.7rem;
+    border-radius: 15px; /* Rounded pill shape */
+    font-size: 0.75rem;
+    font-weight: 500;
+    /* transition: background-color 0.3s ease, color 0.3s ease; */ /* Optional: for hover effects on tags if desired */
 }
+
+/* Optional: Hover effect for individual tags - can be added if desired
+.tech-tag:hover {
+    background-color: var(--accent-primary);
+    color: var(--primary-background);
+}
+*/
 
 .project-links {
     display: flex;
     gap: 0.5rem;
     margin-top: auto;
 }
+
+/* Featured Project Styling */
+.featured-project {
+    grid-column: span 2; /* Span two columns */
+    /* Slightly larger, but be mindful of grid behavior with minmax */
+    /* Consider adjusting minmax(320px, 1fr) if this causes issues, */
+    /* or use transform: scale(1.02) for a subtle size increase. */
+    /* For now, let's rely on spanning and distinct styling. */
+    border-color: var(--accent-glow); /* Glowing border base */
+    box-shadow: 0 0 15px var(--accent-glow), 0 0 30px rgba(0, 170, 255, 0.5); /* Enhanced glow */
+}
+
+.featured-project:hover {
+    border-color: var(--accent-primary); /* Maintain glow on hover or enhance */
+    box-shadow: 0 0 25px var(--accent-glow), 0 0 45px rgba(0, 170, 255, 0.7);
+    /* Keep existing hover transform if desired, or modify */
+    transform: translateY(-10px) perspective(1000px) rotateX(1deg) rotateY(1deg); /* Subtle adjustment */
+}
+
+.featured-project::before {
+    content: "🚀 Featured";
+    position: absolute;
+    top: -10px; /* Adjust for desired placement */
+    left: 20px; /* Adjust for desired placement */
+    background-color: var(--accent-secondary); /* Electric magenta */
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px 15px 15px 0; /* Pill shape pointing right */
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
 
 /* Skills Section - Matching Project Cards Style */
 #skills {
@@ -289,8 +378,9 @@ section {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    /* Re-using project grid styling for consistency */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; /* Matching project grid gap */
     text-align: left;
 }
 
@@ -343,12 +433,22 @@ section {
     transform: translateX(5px);
 }
 
-/* Contact Section - Clean Single Column */
+/* Contact Section - Card Layout */
 .contact-container {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: flex-start;
+    /* Re-using project grid styling for consistency */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; /* Matching project grid gap */
+    align-items: flex-start; /* Keep items aligned to the top if they have different heights */
+}
+
+.contact-info-card {
+    background-color: var(--secondary-background);
+    padding: 2rem; /* Matching form padding */
+    border-radius: 8px;
+    border: 1px solid var(--subtle-accent);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .contact-info p {
@@ -402,7 +502,7 @@ section {
     /* Additional styling if needed */
 }
 
-/* Contact Form Styling */
+/* Contact Form Styling - now also a card with hover */
 .contact-form {
     background-color: var(--secondary-background);
     padding: 2rem;
@@ -410,8 +510,17 @@ section {
     border: 1px solid var(--subtle-accent);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     width: 100%;
-    max-width: 100%;
+    max-width: 100%; /* Ensure it doesn't overflow its grid cell */
     box-sizing: border-box;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added transition */
+}
+
+/* Unified hover for contact cards */
+.contact-info-card:hover,
+.contact-form:hover {
+    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
+    border-color: var(--accent-primary);
 }
 
 .form-group {
