@@ -389,7 +389,17 @@ section {
     border: 1px solid var(--subtle-accent);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex; /* Added for flex column layout */
+    flex-direction: column; /* Added for flex column layout */
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 0.5s ease-out forwards; /* Added animation */
 }
+
+/* Staggered animation delays for skill cards */
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+
 
 .skill-category:hover {
     transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
@@ -398,38 +408,35 @@ section {
 }
 
 .skill-category h3 {
-    font-size: 1.5rem;
-    color: var(--accent-primary);
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--subtle-accent);
-    padding-bottom: 0.5rem;
-    font-weight: 500;
-    text-align: center;
+    font-size: 1.5rem; /* Consistent with project card h3 */
+    color: var(--text-primary); /* Changed from accent to primary text for consistency */
+    margin-bottom: 0.75rem; /* Adjusted for closer spacing to description */
+    /* border-bottom: 2px solid var(--subtle-accent); Removed border */
+    /* padding-bottom: 0.5rem; Removed padding */
+    font-weight: 700; /* Bold like project card titles */
+    text-align: left; /* Align with content */
 }
 
-.skill-category ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skill-category li {
-    font-size: 0.95rem;
+.skill-description {
+    font-size: 0.9rem; /* Consistent with project description */
     color: var(--text-secondary);
-    padding: 0.4rem 0.6rem;
-    margin-bottom: 0.4rem;
-    background-color: var(--primary-background);
-    border-radius: 4px;
-    border-left: 3px solid var(--accent-primary);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 1rem; /* Space before stack */
+    flex-grow: 1; /* Allow description to take up space */
 }
 
-.skill-category li:hover {
-    background-color: var(--subtle-accent);
-    color: var(--text-primary);
-    transform: translateX(5px);
+.skill-stack {
+    font-size: 0.85rem; /* Slightly smaller for stack info */
+    color: var(--text-secondary);
+    line-height: 1.4;
+    margin-top: auto; /* Push stack to bottom if card heights vary due to description length */
 }
+
+.skill-stack strong {
+    color: var(--text-accent); /* Accent color for "Stack:" label */
+    font-weight: 600;
+}
+
 
 /* Contact Section - Card Layout */
 /* Contact Container Specifics */
