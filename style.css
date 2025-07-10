@@ -224,8 +224,18 @@ section {
     box-sizing: border-box;
     /* Common grid properties */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Default 3-column layout */
+    /* grid-template-columns: repeat(3, 1fr); /* Default 3-column layout - MOVED SPECIFICALLY */
     gap: 2rem; /* Consistent gap */
+}
+
+/* Projects and Skills retain 3 columns by default if desired, or adjust here */
+.projects-grid, .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Contact container will have 3 columns for the new panel */
+.contact-container {
+    grid-template-columns: repeat(3, 1fr); /* Default 3-column layout */
 }
 
 
@@ -518,9 +528,52 @@ section {
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added transition */
 }
 
+/* Styling for the new code focus card */
+.contact-code-focus-card {
+    background-color: var(--secondary-background);
+    padding: 2rem; /* Matching form padding */
+    border-radius: 8px;
+    border: 1px solid var(--subtle-accent);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    display: flex; /* Added for flex column layout */
+    flex-direction: column; /* Added for flex column layout */
+}
+
+.contact-code-focus-card h3 {
+    font-size: 1.5rem; /* Consistent with other card h3 */
+    color: var(--text-primary);
+    margin-bottom: 1rem; /* Space after heading */
+    font-weight: 700;
+    text-align: left;
+}
+
+.contact-code-focus-card p {
+    font-size: 1rem; /* Adjusted for better readability */
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem; /* Consistent spacing between paragraphs */
+}
+
+.contact-code-focus-card p:last-child {
+    margin-bottom: 0; /* No margin for the last paragraph */
+}
+
+.contact-code-focus-card a {
+    color: var(--accent-primary);
+    font-weight: 500;
+}
+
+.contact-code-focus-card a:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
+}
+
+
 /* Unified hover for contact cards */
 .contact-info-card:hover,
-.contact-form:hover {
+.contact-form:hover,
+.contact-code-focus-card:hover { /* Added new card to unified hover */
     transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
     box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
     border-color: var(--accent-primary);
