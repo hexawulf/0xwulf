@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/0xwulf
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://0xwulf.dev
+  * I am 0xwulf (https://keybase.io/0xwulf) on keybase.
+  * I have a public key ASCkXhm8OQlW-UMhIW6tAKI7kxR6_uxS90Hhwfq-EC0Zqwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a45e19bc390956f94321216ead00a23b93147afeec52f741e1c1fabe102d19ab0a",
+      "host": "keybase.io",
+      "kid": "0120a45e19bc390956f94321216ead00a23b93147afeec52f741e1c1fabe102d19ab0a",
+      "uid": "b45cbefc4714b9a44109ebe64c4fc619",
+      "username": "0xwulf"
+    },
+    "merkle_root": {
+      "ctime": 1757856072,
+      "hash": "274f1c3b490940e041f70f534513e04cfa2caa65add61671c6c2d3d10bbc8c372d5d45ac061bcb3af86e1dfda5a00e5e7717a7d6bc5a3b4b885114bda529c5e0",
+      "hash_meta": "6f1b93e63344f1a30d77ade0c4e4d1d8829bffb06010a79c3d2a75dc6895cb6f",
+      "seqno": 27088537
+    },
+    "service": {
+      "entropy": "R9JAhqVjERneGeXUtDGoMd5I",
+      "hostname": "0xwulf.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.1"
+  },
+  "ctime": 1757856089,
+  "expire_in": 504576000,
+  "prev": "fdc1e29f26edee106e08fe26bfd7109686f6d3d9de9ff36e8654001386f35778",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgpF4ZvDkJVvlDISFurQCiO5MUev7sUvdB4cH6vhAtGasKp3BheWxvYWTESpcCCMQg/cHinybt7hBuCP4mv9cQlob209nen/NuhlQAE4bzV3jEIN6WvKB/4IZQqV2gCIayHUwjPBm3A1XzlHVkNe6G5z06AgHCo3NpZ8RAz43JkC3S3YbZXjYeADmIU9dpJ5omGVmMltHJYgTLyxwcveCB/mAOBdU6c/qXV+vIW9rzdbFdy6wQADghvP6PAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJ0WuWUOypErwGqXCpEZdJI21FiJFOHlsoreiWnCwYSIo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/0xwulf
+
+==================================================================
