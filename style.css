@@ -149,6 +149,13 @@ header {
     color: var(--accent-primary);
 }
 
+.hero-avatar {
+    width: clamp(160px, 18vw, 220px);
+    height: clamp(160px, 18vw, 220px);
+    border-radius: 9999px;
+    box-shadow: 0 0 30px rgba(29, 161, 242, 0.2);
+}
+
 /* Featured Project */
 .featured-panel {
     border-radius: 1.5rem; /* rounded-3xl */
