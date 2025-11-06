@@ -48,4 +48,12 @@ export const projects = [
     codeLink: 'https://github.com/hexawulf/PiDeck',
     liveLink: 'https://pideck.piapps.dev',
   },
+  {
+    icon: '🍓',
+    title: 'PiTasker',
+    description: 'Raspberry Pi task scheduler & automation dashboard. Lightweight and tuned for <90MB memory usage.',
+    techStack: ["Raspberry Pi", "Node.js", "TypeScript", "Express", "PM2", "Tailwind"],
+    codeLink: 'https://github.com/hexawulf/PiTasker',
+    liveLink: 'https://pitasker.piapps.dev/'
+  }
 ];
