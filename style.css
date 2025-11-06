@@ -169,20 +169,21 @@ section {
 
 /* UNIFIED SECTION STYLING - All sections same background, NO BORDERS */
 #about, #projects, #skills, #contact {
-    padding: 4rem 2rem;
+    padding: 5rem 2rem; /* Increased vertical spacing */
     background-color: var(--primary-background);
     /* NO BORDERS AT ALL */
 }
 
 /* UNIFIED SECTION HEADERS - ALL PROPERLY CENTERED */
 #about h2, #projects h2, #skills h2, #contact h2 {
-    font-size: 2.5rem;
+    font-size: 2.75rem; /* Slightly larger */
     color: var(--text-primary);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem; /* Increased spacing */
     position: relative;
-    display: block; /* CHANGED from inline-block */
-    /* REMOVED left: 50% and transform that were causing offset */
+    display: block;
+    font-weight: 700;
+    letter-spacing: -0.02em; /* Tighter for large headings */
 }
 
 @keyframes fadeInUp {
@@ -210,32 +211,33 @@ section {
 
 /* UNIFIED CONTAINER STYLING */
 .about-container { /* Text content, can remain narrower for readability */
-    max-width: 720px;
+    max-width: 48rem; /* ~768px - optimal reading width */
     margin: 0 auto;
-    padding: 0 20px; /* Keep padding for text block */
+    padding: 0 1.5rem; /* Responsive padding */
     box-sizing: border-box;
 }
 
 .projects-grid, .skills-container, .contact-container {
-    /* Allow these grid containers to expand more to utilize auto-fit */
-    max-width: 1200px; /* Or match main's max-width, e.g., 1440px if desired */
+    max-width: 1280px; /* Optimal width for grid layouts */
     margin: 0 auto;
-    /* padding: 0 20px; /* Remove this to rely on section padding */
     box-sizing: border-box;
-    /* Common grid properties */
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); /* Default 3-column layout - MOVED SPECIFICALLY */
     gap: 2rem; /* Consistent gap */
 }
 
-/* Projects and Skills retain 3 columns by default if desired, or adjust here */
-.projects-grid, .skills-container {
-    grid-template-columns: repeat(3, 1fr);
+/* Projects grid with auto-fit for better responsiveness */
+.projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Skills retain 3 columns by default */
+.skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 /* Contact container will have 3 columns for the new panel */
 .contact-container {
-    grid-template-columns: repeat(3, 1fr); /* Default 3-column layout */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 
@@ -244,30 +246,36 @@ section {
     text-align: center;
 }
 
+#about .about-container {
+    max-width: 48rem; /* ~768px - optimal reading width */
+}
+
 #about p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.9; /* Increased for better readability */
     font-weight: 300;
+    letter-spacing: 0.01em; /* Slight letter spacing for elegance */
     margin: 0;
 }
 
 /* Projects Grid Specifics */
 .projects-grid {
-    text-align: left; /* Retain if necessary, though card content usually handles alignment */
-    /* display, grid-template-columns, and gap are now in the common rule */
+    text-align: left;
+    gap: 2rem; /* Increased gap for better spacing */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
 .project-card {
     position: relative; /* For badge positioning */
     background-color: var(--secondary-background);
-    border: 1px solid var(--subtle-accent);
-    border-radius: 8px;
-    padding: 1.5rem;
+    border: 1px solid rgba(46, 46, 95, 0.3); /* Reduced opacity for softer borders */
+    border-radius: 16px; /* Increased from 8px for softer look */
+    padding: 2rem; /* Increased from 1.5rem for better spacing */
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.2); /* Softer, layered shadows */
     box-sizing: border-box;
 
     /* Animation */
@@ -286,9 +294,9 @@ section {
 
 
 .project-card:hover {
-    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
-    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
-    border-color: var(--accent-primary);
+    transform: translateY(-8px); /* Subtle elevation without 3D rotation */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(29, 161, 242, 0.3); /* Enhanced shadow with glow */
+    border-color: rgba(29, 161, 242, 0.5); /* Subtle glow border */
 }
 
 .project-icon {
@@ -305,10 +313,10 @@ section {
 }
 
 .project-description {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 0.75rem;
+    line-height: 1.7; /* Increased for better readability */
+    margin-bottom: 1rem;
     flex-grow: 1;
 }
 
@@ -349,20 +357,15 @@ section {
 
 /* Featured Project Styling */
 .featured-project {
-    /* grid-column: span 2; /* REMOVED - No longer spans columns */
-    /* Slightly larger, but be mindful of grid behavior with minmax */
-    /* Consider adjusting minmax(320px, 1fr) if this causes issues, */
-    /* or use transform: scale(1.02) for a subtle size increase. */
-    /* For now, let's rely on spanning and distinct styling. */
-    border-color: var(--accent-glow); /* Glowing border base */
-    box-shadow: 0 0 15px var(--accent-glow), 0 0 30px rgba(0, 170, 255, 0.5); /* Enhanced glow */
+    border-color: rgba(0, 170, 255, 0.4); /* Softer glowing border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 170, 255, 0.4); /* Enhanced glow with depth */
+    background: linear-gradient(135deg, var(--secondary-background) 0%, rgba(26, 26, 46, 0.95) 100%);
 }
 
 .featured-project:hover {
-    border-color: var(--accent-primary); /* Maintain glow on hover or enhance */
-    box-shadow: 0 0 25px var(--accent-glow), 0 0 45px rgba(0, 170, 255, 0.7);
-    /* Keep existing hover transform if desired, or modify */
-    transform: translateY(-10px) perspective(1000px) rotateX(1deg) rotateY(1deg); /* Subtle adjustment */
+    border-color: rgba(0, 170, 255, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 170, 255, 0.5);
+    transform: translateY(-8px); /* Consistent with other cards */
 }
 
 .featured-project::before {
@@ -394,15 +397,15 @@ section {
 
 .skill-category {
     background-color: var(--secondary-background);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem; /* Increased for better spacing */
+    border-radius: 16px; /* Matching project cards */
+    border: 1px solid rgba(46, 46, 95, 0.3); /* Softer border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.2); /* Matching project cards */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    display: flex; /* Added for flex column layout */
-    flex-direction: column; /* Added for flex column layout */
+    display: flex;
+    flex-direction: column;
     opacity: 0; /* Start hidden for animation */
-    animation: fadeInUp 0.5s ease-out forwards; /* Added animation */
+    animation: fadeInUp 0.5s ease-out forwards;
 }
 
 /* Staggered animation delays for skill cards */
@@ -412,9 +415,9 @@ section {
 
 
 .skill-category:hover {
-    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
-    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
-    border-color: var(--accent-primary);
+    transform: translateY(-8px); /* Consistent with project cards */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(29, 161, 242, 0.3);
+    border-color: rgba(29, 161, 242, 0.5);
 }
 
 .skill-category h3 {
@@ -428,23 +431,25 @@ section {
 }
 
 .skill-description {
-    font-size: 0.9rem; /* Consistent with project description */
+    font-size: 0.95rem; /* Consistent with project description */
     color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 1rem; /* Space before stack */
-    flex-grow: 1; /* Allow description to take up space */
+    line-height: 1.7; /* Better readability */
+    margin-bottom: 1.25rem; /* More space before stack */
+    flex-grow: 1;
 }
 
 .skill-stack {
-    font-size: 0.85rem; /* Slightly smaller for stack info */
+    font-size: 0.9rem;
     color: var(--text-secondary);
-    line-height: 1.4;
-    margin-top: auto; /* Push stack to bottom if card heights vary due to description length */
+    line-height: 1.6; /* Improved line height */
+    margin-top: auto;
 }
 
 .skill-stack strong {
-    color: var(--text-accent); /* Accent color for "Stack:" label */
+    color: var(--text-accent);
     font-weight: 600;
+    display: block; /* Put label on its own line */
+    margin-bottom: 0.5rem;
 }
 
 
@@ -457,18 +462,18 @@ section {
 
 .contact-info-card {
     background-color: var(--secondary-background);
-    padding: 2rem; /* Matching form padding */
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 16px; /* Matching other cards */
+    border: 1px solid rgba(46, 46, 95, 0.3); /* Softer border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .contact-info p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    line-height: 1.8; /* Better readability */
+    margin-bottom: 1.25rem; /* Increased spacing */
 }
 
 .contact-info a {
@@ -519,25 +524,25 @@ section {
 .contact-form {
     background-color: var(--secondary-background);
     padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 16px; /* Matching other cards */
+    border: 1px solid rgba(46, 46, 95, 0.3); /* Softer border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 100%; /* Ensure it doesn't overflow its grid cell */
+    max-width: 100%;
     box-sizing: border-box;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added transition */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 /* Styling for the new code focus card */
 .contact-code-focus-card {
     background-color: var(--secondary-background);
-    padding: 2rem; /* Matching form padding */
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 16px; /* Matching other cards */
+    border: 1px solid rgba(46, 46, 95, 0.3); /* Softer border */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    display: flex; /* Added for flex column layout */
-    flex-direction: column; /* Added for flex column layout */
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-code-focus-card h3 {
@@ -573,21 +578,21 @@ section {
 /* Unified hover for contact cards */
 .contact-info-card:hover,
 .contact-form:hover,
-.contact-code-focus-card:hover { /* Added new card to unified hover */
-    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
-    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
-    border-color: var(--accent-primary);
+.contact-code-focus-card:hover {
+    transform: translateY(-8px); /* Consistent with other cards */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(29, 161, 242, 0.3);
+    border-color: rgba(29, 161, 242, 0.5);
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem; /* Increased spacing between fields */
 }
 
 .form-group label {
     display: block;
     font-size: 1rem;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem; /* More space after label */
     font-weight: 500;
 }
 
@@ -611,7 +616,7 @@ section {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
-    box-shadow: 0 0 8px var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(29, 161, 242, 0.2), 0 0 12px rgba(29, 161, 242, 0.4); /* Enhanced focus state */
 }
 
 .form-group textarea {
@@ -803,7 +808,7 @@ header {
 /* Responsive Design */
 @media (max-width: 768px) {
     #about, #projects, #skills, #contact {
-        padding: 3rem 1rem;
+        padding: 3.5rem 1.25rem;
     }
 
     #about h2, #projects h2, #skills h2, #contact h2 {
@@ -811,13 +816,17 @@ header {
         margin-bottom: 2rem;
     }
 
-    .about-container, .projects-grid, .skills-container, .contact-container {
-        padding: 0 15px;
+    .about-container {
+        padding: 0 1rem;
     }
 
-    .projects-grid, .skills-container, .contact-container { /* Added .contact-container */
+    .projects-grid, .skills-container, .contact-container {
         grid-template-columns: 1fr; /* 1 column for mobile */
-        gap: 1.5rem; /* Consistent gap for mobile */
+        gap: 1.5rem;
+    }
+
+    .project-card, .skill-category, .contact-info-card, .contact-form, .contact-code-focus-card {
+        padding: 1.5rem; /* Reduce padding on mobile */
     }
 
     .project-links {
@@ -907,14 +916,19 @@ header {
 }
 
 @media (max-width: 1024px) {
-    .about-container, .projects-grid, .skills-container, .contact-container {
-        padding: 0 40px; /* Existing padding adjustment */
+    .about-container {
+        padding: 0 2rem;
+    }
+
+    #about h2, #projects h2, #skills h2, #contact h2 {
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
     }
 
     /* Tablet: 2-column layout for grids */
     .projects-grid, .skills-container, .contact-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* Gap will remain 2rem as inherited from base, which is fine */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
     }
 }
 

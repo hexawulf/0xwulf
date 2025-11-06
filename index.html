@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0xWulf - Developer Portfolio</title>
+    <meta name="description" content="CS undergraduate specializing in AI and full-stack development. Building intelligent solutions with modern tech stack.">
+    <meta name="author" content="0xWulf">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://0xwulf.dev/">
+    <meta property="og:title" content="0xWulf - Developer Portfolio">
+    <meta property="og:description" content="CS undergraduate specializing in AI and full-stack development. Building intelligent solutions with modern tech stack.">
+    <meta property="og:image" content="https://0xwulf.dev/0xWulf_Banner.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://0xwulf.dev/">
+    <meta property="twitter:title" content="0xWulf - Developer Portfolio">
+    <meta property="twitter:description" content="CS undergraduate specializing in AI and full-stack development. Building intelligent solutions with modern tech stack.">
+    <meta property="twitter:image" content="https://0xwulf.dev/0xWulf_Banner.png">
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-    <!-- Link to CSS file will be added later -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -54,8 +70,29 @@
         <section id="projects">
             <h2>Featured Projects</h2>
             <div class="projects-grid">
-                <article class="project-card featured-project"> <!-- CodePatchwork - MOVED TO TOP -->
-                    <div class="project-icon"><span>🧩</span></div> <!-- Placeholder Icon -->
+                <article class="project-card featured-project"> <!-- ContainerYard Public -->
+                    <div class="project-icon"><span>🐳</span></div>
+                    <h3>ContainerYard Public</h3>
+                    <p class="project-description">Log-first Docker container observability dashboard with real-time streaming, metrics, and debugging tools.</p>
+                    <div class="project-tech-stack">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">WebSockets</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/hexawulf/ContainerYard" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                            View Code
+                        </a>
+                        <a href="https://containeryard.org" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            Website
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card"> <!-- CodePatchwork -->
+                    <div class="project-icon"><span>🧩</span></div>
                     <h3>CodePatchwork</h3>
                     <p class="project-description">Pinterest-style code snippet manager with collaborative features and Firebase integration.</p>
                     <div class="project-tech-stack">
@@ -67,33 +104,11 @@
                         <span class="tech-tag">Firebase Auth</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/hexawulf/CodePatchwork" target="_blank" rel="noopener" class="btn btn-primary">
+                        <a href="https://github.com/hexawulf/CodePatchwork" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                             View Code
                         </a>
-                        <a href="https://codepatchwork.com" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <a href="https://codepatchwork.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                             Try Live Demo
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card"> <!-- Reading-Habit-Tracker -->
-                    <div class="project-icon"><span>📚</span></div> <!-- Placeholder Icon -->
-                    <h3>Reading-Habit-Tracker</h3>
-                    <p class="project-description">Java-based reading analytics platform with intelligent recommendations and progress tracking.</p>
-                    <div class="project-tech-stack">
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">CSV Parser</span>
-                        <span class="tech-tag">Day.js</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hexawulf/reading-habit-tracker" target="_blank" rel="noopener" class="btn btn-primary">
-                            <!-- Placeholder for GitHub Icon --> View Code
-                        </a>
-                        <a href="https://mybooks.piapps.dev" target="_blank" rel="noopener" class="btn btn-secondary">
-                            <!-- Placeholder for External Link Icon --> Try Live Demo
                         </a>
                     </div>
                 </article>
@@ -111,10 +126,10 @@
                         <span class="tech-tag">FileSaver.js</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/hexawulf/tabletamer" target="_blank" rel="noopener" class="btn btn-primary">
+                        <a href="https://github.com/hexawulf/tabletamer" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                             View Code
                         </a>
-                        <a href="https://piapps.dev" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <a href="https://piapps.dev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                             Try Live Demo
                         </a>
                     </div>
@@ -135,10 +150,10 @@
                         <span class="tech-tag">DOMPurify</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/hexawulf/MarkdownMate" target="_blank" rel="noopener" class="btn btn-primary">
+                        <a href="https://github.com/hexawulf/MarkdownMate" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                             View Code
                         </a>
-                        <a href="https://markdown.piapps.dev/editor" target="_blank" rel="noopener" class="btn btn-secondary">
+                        <a href="https://markdown.piapps.dev/editor" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                             Try Live Demo
                         </a>
                     </div>
@@ -154,8 +169,8 @@
                         <span class="tech-tag">Vanilla JS</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/hexawulf/KeyJolt" target="_blank" rel="noopener" class="btn btn-primary">View Code</a>
-                        <a href="https://keyjolt.dev" target="_blank" rel="noopener" class="btn btn-secondary">Try Live Demo</a>
+                        <a href="https://github.com/hexawulf/KeyJolt" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Code</a>
+                        <a href="https://keyjolt.dev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Try Live Demo</a>
                     </div>
                 </article>
                 <article class="project-card">
@@ -172,8 +187,8 @@
                         <span class="tech-tag">PostgreSQL</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/hexawulf/PiDeck" target="_blank" rel="noopener" class="btn btn-primary">View Code</a>
-                        <a href="https://pideck.piapps.dev" target="_blank" rel="noopener" class="btn btn-secondary">Try Live Demo</a>
+                        <a href="https://github.com/hexawulf/PiDeck" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Code</a>
+                        <a href="https://pideck.piapps.dev" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Try Live Demo</a>
                     </div>
                 </article>
             </div>
