@@ -216,22 +216,33 @@ header {
     margin: 0 0 0.5rem;
 }
 
-/* About Section */
-#about .about-container {
-    max-width: 48rem; /* max-w-2xl */
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-avatar-chip {
-    margin-bottom: 1rem;
-}
-
 .avatar-small {
     width: 48px;
     height: 48px;
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Capabilities Section */
+.capabilities-container {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.capability-group {
+    margin-bottom: 2rem;
+}
+
+.capability-group-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.capability-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .pill {
@@ -250,6 +261,11 @@ header {
 }
 
 /* Contact Section */
+#contact {
+    padding-top: clamp(2rem, 6vw, 4rem);
+    padding-bottom: clamp(2rem, 6vw, 4rem);
+}
+
 #contact .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -257,6 +273,8 @@ header {
     align-items: center;
     max-width: 48rem;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-form-panel {
@@ -330,6 +348,20 @@ header {
 }
 
 /* Particles */
+.particles,
+.starscape {
+    position: relative;
+    overflow: hidden;
+}
+
+.particles-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: .35;
+    pointer-events: none;
+}
+
 .particles {
     position: absolute;
     top: 0;

@@ -20,7 +20,7 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#capabilities" class="nav-link">Capabilities</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -45,7 +45,7 @@
                     <a href="https://containeryard.org" target="_blank" rel="noopener noreferrer">containeryard.org</a>
                 </div>
             </div>
-            <div class="particles"></div>
+            <canvas class="particles-canvas" aria-hidden="true"></canvas>
         </section>
 
         <section id="projects">
@@ -57,20 +57,61 @@
             </div>
         </section>
 
-        <section id="about">
-            <div class="about-container">
-                <div class="about-avatar-chip">
-                    <img src="assets/0xWulf.png" alt="0xWulf Avatar" class="avatar-small">
+        <section id="capabilities">
+            <h2 class="section-heading">Capabilities</h2>
+            <div class="capabilities-container">
+                <div class="capability-group">
+                    <h3 class="capability-group-title">Core</h3>
+                    <div class="capability-pills">
+                        <span class="pill">Java 17+</span>
+                        <span class="pill">TypeScript</span>
+                        <span class="pill">JavaScript</span>
+                        <span class="pill">Python</span>
+                    </div>
                 </div>
-                <h2 class="section-heading">About</h2>
-                <div class="about-text">
-                    <p>CS undergraduate at IU Germany, specializing in AI and full-stack development. Passionate about building intelligent solutions with Java and TypeScript—and exploring what’s possible on Linux.</p>
-                    <p>When I’m not coding, I’m optimizing workflows, running a Raspberry-Pi homelab, or digging into machine learning algorithms.</p>
+                <div class="capability-group">
+                    <h3 class="capability-group-title">Frontend</h3>
+                    <div class="capability-pills">
+                        <span class="pill">React</span>
+                        <span class="pill">Vite</span>
+                        <span class="pill">Tailwind CSS</span>
+                        <span class="pill">shadcn/ui</span>
+                        <span class="pill">Framer Motion</span>
+                    </div>
+                </div>
+                <div class="capability-group">
+                    <h3 class="capability-group-title">Backend</h3>
+                    <div class="capability-pills">
+                        <span class="pill">Node.js</span>
+                        <span class="pill">Express</span>
+                        <span class="pill">Spring Boot</span>
+                        <span class="pill">PostgreSQL</span>
+                        <span class="pill">Firebase</span>
+                    </div>
+                </div>
+                <div class="capability-group">
+                    <h3 class="capability-group-title">Infra/DevOps</h3>
+                    <div class="capability-pills">
+                        <span class="pill">Docker</span>
+                        <span class="pill">Linux</span>
+                        <span class="pill">Raspberry Pi</span>
+                        <span class="pill">Nginx</span>
+                        <span class="pill">GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="capability-group">
+                    <h3 class="capability-group-title">Data/AI</h3>
+                    <div class="capability-pills">
+                        <span class="pill">Machine Learning</span>
+                        <span class="pill">Data Analysis</span>
+                        <span class="pill">AI Tooling</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="section starscape">
+            <canvas class="particles-canvas" aria-hidden="true"></canvas>
             <div class="contact-container">
                 <div class="contact-info">
                     <h2 class="section-heading">Get In Touch</h2>
