@@ -223,27 +223,6 @@ header {
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Capabilities Section */
-.capabilities-container {
-    max-width: 48rem;
-    margin: 0 auto;
-}
-
-.capability-group {
-    margin-bottom: 2rem;
-}
-
-.capability-group-title {
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-}
-
-.capability-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
 
 .pill {
     padding: 0.25rem 0.75rem; /* px-3 py-1 */
