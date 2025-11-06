@@ -1,4 +1,5 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (static)
+
 on:
   push:
     branches: [ "main" ]
@@ -14,23 +15,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '20' }
-      - run: npm ci
-      - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist     # change if your build outputs elsewhere
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Optional but nice for SPA/deep links: serve index.html on 404s
+      - name: Add 404 fallback if missing
+        run: |
+          if [ ! -f 404.html ] && [ -f index.html ]; then cp index.html 404.html; fi
+
+      # Ensure CNAME ships (you already have CNAME in repo root)
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
+
+      - name: Deploy to Pages
+        id: deployment
         uses: actions/deploy-pages@v4
