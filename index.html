@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0xWulf - Developer Portfolio</title>
+    <title>0xWulf // Raspberry-Pi homelab • Java/TS • AI tooling</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
-    <!-- Link to CSS file will be added later -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-logo">
-                <a href="#">0xWulf</a> <!-- Or your logo/name -->
+                <a href="#">0xWulf</a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
@@ -33,259 +32,182 @@
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section id="hero">
-            <h1>Hi, I'm 0xWulf</h1>
-            <div class="typewriter-container">
-                <p class="typewriter-text" data-text1="Building AI-driven solutions" data-text2="One line of code at a time">Building AI-driven solutions<span class="cursor"></span></p>
+            <div class="hero-content">
+                <h1>Hi, I'm 0xWulf</h1>
+                <div class="typewriter-container">
+                    <p class="typewriter-text" data-text1="Building AI-driven solutions" data-text2="One line of code at a time">Building AI-driven solutions<span class="cursor"></span></p>
+                </div>
+                <p class="hero-substrap">Raspberry-Pi homelab • Java/TS • AI tooling.</p>
+                <div class="hero-links">
+                    <a href="https://github.com/hexawulf" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://containeryard.org" target="_blank" rel="noopener noreferrer">containeryard.org</a>
+                </div>
             </div>
-            <p class="hero-substrap">Raspberry-Pi homelab • Java/TS • AI tooling</p>
-            <div class="hero-links">
-                <a href="https://github.com/hexawulf" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <span class="hero-link-separator">•</span>
-                <a href="https://containeryard.org" target="_blank" rel="noopener noreferrer">containeryard.org</a>
-            </div>
-            <img src="assets/0xWulf.png" alt="0xWulf Profile Picture">
             <div class="particles"></div>
         </section>
 
-        <section id="about">
-            <div class="about-avatar-chip">
-                <img src="assets/0xWulf.png" alt="0xWulf Avatar" class="avatar-small">
+        <section id="projects">
+            <div id="featured-project-container">
+                <!-- Featured project will be injected here by script -->
             </div>
-            <h2>About Me</h2>
-            <div class="about-container">
-                <p>CS undergraduate at IU Germany, specializing in AI and full-stack development. Passionate about building intelligent solutions with Java and exploring the endless possibilities of Linux.</p>
-                <p>When I'm not coding, you'll find me optimizing workflows, managing my Raspberry Pi homelab, or diving deep into machine learning algorithms.</p>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Other projects will be injected here by script -->
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Featured Projects</h2>
-
-            <!-- Featured Project Panel -->
-            <article class="featured-project-panel">
-                <div class="featured-badge">⭐ Featured</div>
-                <div class="featured-content">
-                    <div class="featured-icon">🐳</div>
-                    <h3>ContainerYard Public</h3>
-                    <p class="featured-description">Log-first Docker container observability dashboard with real-time streaming, metrics, and debugging tools.</p>
-                    <div class="project-tech-stack">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">WebSockets</span>
-                    </div>
-                    <div class="featured-links">
-                        <a href="https://github.com/hexawulf/ContainerYard" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Code</a>
-                        <a href="https://containeryard.org" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit Website</a>
-                    </div>
+        <section id="about">
+            <div class="about-container">
+                <div class="about-avatar-chip">
+                    <img src="assets/0xWulf.png" alt="0xWulf Avatar" class="avatar-small">
                 </div>
-            </article>
-
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-icon"><span>🧩</span></div>
-                    <h3>CodePatchwork</h3>
-                    <p class="project-description">Pinterest-style code snippet manager with collaborative features and Firebase integration.</p>
-                    <div class="project-tech-stack">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Tailwind</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">Firebase Auth</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hexawulf/CodePatchwork" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View Code</a>
-                        <a href="https://codepatchwork.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Try Live Demo</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon"><span>🗂️</span></div>
-                    <h3>TableTamer</h3>
-                    <p class="project-description">Browser-based CSV visualizer with real-time editing, filtering, and data transformation capabilities.</p>
-                    <div class="project-tech-stack">
-                        <span class="tech-tag">React 18</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Vite</span>
-                        <span class="tech-tag">Tailwind CSS</span>
-                        <span class="tech-tag">PapaParse</span>
-                        <span class="tech-tag">FileSaver.js</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hexawulf/tabletamer" target="_blank" rel="noopener" class="btn btn-primary">
-                            View Code
-                        </a>
-                        <a href="https://piapps.dev" target="_blank" rel="noopener" class="btn btn-secondary">
-                            Try Live Demo
-                        </a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-icon"><span>📝</span></div>
-                    <h3>MarkdownMate</h3>
-                    <p class="project-description">Real-time collaborative markdown editor and previewer with advanced syntax highlighting and live rendering capabilities.</p>
-                    <div class="project-tech-stack">
-                        <span class="tech-tag">React 18</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Vite</span>
-                        <span class="tech-tag">Tailwind</span>
-                        <span class="tech-tag">shadcn/ui</span>
-                        <span class="tech-tag">Monaco Editor</span>
-                        <span class="tech-tag">Marked.js</span>
-                        <span class="tech-tag">DOMPurify</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hexawulf/MarkdownMate" target="_blank" rel="noopener" class="btn btn-primary">
-                            View Code
-                        </a>
-                        <a href="https://markdown.piapps.dev/editor" target="_blank" rel="noopener" class="btn btn-secondary">
-                            Try Live Demo
-                        </a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-icon"><span>🔐</span></div>
-                    <h3>KeyJolt</h3>
-                    <p class="project-description">PGP key generator for privacy enthusiasts with secure deletion and rate limiting.</p>
-                    <div class="project-tech-stack">
-                        <span class="tech-tag">Spring Boot 3</span>
-                        <span class="tech-tag">Java 17</span>
-                        <span class="tech-tag">Thymeleaf</span>
-                        <span class="tech-tag">Vanilla JS</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hexawulf/KeyJolt" target="_blank" rel="noopener" class="btn btn-primary">View Code</a>
-                        <a href="https://keyjolt.dev" target="_blank" rel="noopener" class="btn btn-secondary">Try Live Demo</a>
-                    </div>
-                </article>
-                <article class="project-card">
-                    <div class="project-icon"><span>🛠️</span></div>
-                    <h3>PiDeck</h3>
-                    <p class="project-description">
-                        Admin dashboard for managing Raspberry Pi 5 server. Centralized control hub for hosted apps and system metrics.
-                    </p>
-                    <div class="project-tech-stack">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">TailwindCSS</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/hexawulf/PiDeck" target="_blank" rel="noopener" class="btn btn-primary">View Code</a>
-                        <a href="https://pideck.piapps.dev" target="_blank" rel="noopener" class="btn btn-secondary">Try Live Demo</a>
-                    </div>
-                </article>
+                <h2 class="section-heading">About</h2>
+                <div class="about-text">
+                    <p>CS undergraduate at IU Germany, specializing in AI and full-stack development. Passionate about building intelligent solutions with Java and TypeScript—and exploring what’s possible on Linux.</p>
+                    <p>When I’m not coding, I’m optimizing workflows, running a Raspberry-Pi homelab, or digging into machine learning algorithms.</p>
+                </div>
             </div>
         </section>
 
         <section id="capabilities">
-            <h2>Capabilities</h2>
+            <h2 class="section-heading">Capabilities</h2>
             <div class="capabilities-container">
                 <div class="capability-group">
                     <h3 class="capability-group-title">Core</h3>
                     <div class="capability-pills">
-                        <span class="capability-pill">Java 17+</span>
-                        <span class="capability-pill">TypeScript</span>
-                        <span class="capability-pill">JavaScript</span>
-                        <span class="capability-pill">Python</span>
+                        <span class="pill">Java 17+</span>
+                        <span class="pill">TypeScript</span>
+                        <span class="pill">JavaScript</span>
+                        <span class="pill">Python</span>
                     </div>
                 </div>
-
                 <div class="capability-group">
                     <h3 class="capability-group-title">Frontend</h3>
                     <div class="capability-pills">
-                        <span class="capability-pill">React</span>
-                        <span class="capability-pill">Vite</span>
-                        <span class="capability-pill">Tailwind CSS</span>
-                        <span class="capability-pill">shadcn/ui</span>
-                        <span class="capability-pill">Framer Motion</span>
+                        <span class="pill">React</span>
+                        <span class="pill">Vite</span>
+                        <span class="pill">Tailwind CSS</span>
+                        <span class="pill">shadcn/ui</span>
+                        <span class="pill">Framer Motion</span>
                     </div>
                 </div>
-
                 <div class="capability-group">
                     <h3 class="capability-group-title">Backend</h3>
                     <div class="capability-pills">
-                        <span class="capability-pill">Node.js</span>
-                        <span class="capability-pill">Express</span>
-                        <span class="capability-pill">Spring Boot</span>
-                        <span class="capability-pill">PostgreSQL</span>
-                        <span class="capability-pill">Firebase</span>
+                        <span class="pill">Node.js</span>
+                        <span class="pill">Express</span>
+                        <span class="pill">Spring Boot</span>
+                        <span class="pill">PostgreSQL</span>
+                        <span class="pill">Firebase</span>
                     </div>
                 </div>
-
                 <div class="capability-group">
                     <h3 class="capability-group-title">Infra/DevOps</h3>
                     <div class="capability-pills">
-                        <span class="capability-pill">Docker</span>
-                        <span class="capability-pill">Linux</span>
-                        <span class="capability-pill">Raspberry Pi</span>
-                        <span class="capability-pill">Nginx</span>
-                        <span class="capability-pill">GitHub Actions</span>
-                        <span class="capability-pill">Bash</span>
+                        <span class="pill">Docker</span>
+                        <span class="pill">Linux</span>
+                        <span class="pill">Raspberry Pi</span>
+                        <span class="pill">Nginx</span>
+                        <span class="pill">GitHub Actions</span>
                     </div>
                 </div>
-
                 <div class="capability-group">
                     <h3 class="capability-group-title">Data/AI</h3>
                     <div class="capability-pills">
-                        <span class="capability-pill">Machine Learning</span>
-                        <span class="capability-pill">Data Analysis</span>
-                        <span class="capability-pill">AI Tooling</span>
+                        <span class="pill">Machine Learning</span>
+                        <span class="pill">Data Analysis</span>
+                        <span class="pill">AI Tooling</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Get In Touch</h2>
             <div class="contact-container">
-                <div class="contact-info-card">
-                    <div class="contact-info">
-                        <p>Have a project in mind, want to collaborate, or just say hi?</p>
-                        <p>I'd love to hear from you!</p>
-                        <p>Email: <a href="mailto:dev@0xwulf.dev">dev@0xwulf.dev</a></p>
-                        <div class="social-links">
-                            <a href="https://github.com/hexawulf" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
-                            <a href="https://twitter.com/hexawulf" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">Twitter</a>
-                            <a href="https://bsky.app/profile/hexawulf.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky Profile">BlueSky</a>
-                        </div>
+                <div class="contact-info">
+                    <h2 class="section-heading">Get In Touch</h2>
+                    <p>Have a project in mind, want to collaborate, or just say hi? I’d love to hear from you!</p>
+                    <a href="mailto:dev@0xwulf.dev" class="email-link">dev@0xwulf.dev</a>
+                    <div class="social-links">
+                         <a href="https://github.com/hexawulf" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                         <a href="https://twitter.com/hexawulf" target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">Twitter</a>
+                         <a href="https://bsky.app/profile/hexawulf.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="BlueSky Profile">BlueSky</a>
                     </div>
                 </div>
-
-                <form class="contact-form" action="https://formspree.io/f/mnnvagzw" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="New Portfolio Contact from 0xWulf.dev">
-                    <input type="hidden" name="_next" value="https://hexawulf.github.io/portfolio/thank-you.html">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Send Message</button>
-                </form>
+                <div class="contact-form-panel">
+                    <form class="contact-form" action="https://formspree.io/f/mnnvagzw" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Portfolio Contact from 0xWulf.dev">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <!-- Footer content will be added later -->
         <p>&copy; 2024 0xWulf</p>
     </footer>
 
-    <!-- Link to JavaScript file will be added later -->
     <script src="script.js"></script>
+    <script type="module">
+        import { projects } from './src/data/projects.js';
+
+        const featuredProjectContainer = document.getElementById('featured-project-container');
+        const projectsGrid = document.getElementById('projects-grid');
+
+        const featuredProject = projects.find(p => p.featured);
+        const otherProjects = projects.filter(p => !p.featured);
+
+        function createTechPills(techStack) {
+            return techStack.map(tech => `<span class="pill">${tech}</span>`).join('');
+        }
+
+        if (featuredProject && featuredProjectContainer) {
+            featuredProjectContainer.innerHTML = \`
+                <article class="featured-panel">
+                    <div class="featured-content">
+                        <div class="featured-title-glow"></div>
+                        <h3>\${featuredProject.icon} \${featuredProject.title}</h3>
+                        <p class="featured-description">\${featuredProject.description}</p>
+                        <div class="project-pills">\${createTechPills(featuredProject.techStack)}</div>
+                        <div class="project-links">
+                            <a href="\${featuredProject.codeLink}" target="_blank" rel="noopener noreferrer" class="btn">View Code</a>
+                            <a href="\${featuredProject.liveLink}" target="_blank" rel="noopener noreferrer" class="btn">Visit Website</a>
+                        </div>
+                    </div>
+                </article>
+            \`;
+        }
+
+        if (projectsGrid) {
+            projectsGrid.innerHTML = otherProjects.map(project => \`
+                <article class="card">
+                    <div class="card-content">
+                        <h4>\${project.icon} \${project.title}</h4>
+                        <p>\${project.description}</p>
+                        <div class="project-pills">\${createTechPills(project.techStack)}</div>
+                         <div class="project-links">
+                            <a href="\${project.codeLink}" target="_blank" rel="noopener noreferrer" class="btn">View Code</a>
+                            <a href="\${project.liveLink}" target="_blank" rel="noopener noreferrer" class="btn">Visit Website</a>
+                        </div>
+                    </div>
+                </article>
+            \`).join('');
+        }
+    </script>
 </body>
 </html>
