@@ -22,7 +22,7 @@ export const projects = [
     description: 'Browser-based CSV visualizer with real-time editing, filtering, and data transformation capabilities.',
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'PapaParse', 'FileSaver.js'],
     codeLink: 'https://github.com/hexawulf/tabletamer',
-    liveLink: 'https://piapps.dev',
+    liveLink: 'https://tabletamer.piapps.dev',
   },
   {
     icon: '📝',
