@@ -167,22 +167,61 @@ section {
     }
 }
 
+/* Hero sub-strap */
+.hero-substrap {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Hero links */
+.hero-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.hero-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    opacity: 0.7;
+}
+
+.hero-links a:hover {
+    color: var(--accent-primary);
+    opacity: 1;
+    text-decoration: none;
+}
+
+.hero-link-separator {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
 /* UNIFIED SECTION STYLING - All sections same background, NO BORDERS */
-#about, #projects, #skills, #contact {
-    padding: 4rem 2rem;
+#about, #projects, #capabilities, #contact {
+    padding: 5rem 1.5rem;
     background-color: var(--primary-background);
-    /* NO BORDERS AT ALL */
 }
 
 /* UNIFIED SECTION HEADERS - ALL PROPERLY CENTERED */
-#about h2, #projects h2, #skills h2, #contact h2 {
-    font-size: 2.5rem;
+#about h2, #projects h2, #capabilities h2, #contact h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
     color: var(--text-primary);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
     position: relative;
-    display: block; /* CHANGED from inline-block */
-    /* REMOVED left: 50% and transform that were causing offset */
+    display: block;
+    font-weight: 600;
+    letter-spacing: -0.02em;
 }
 
 @keyframes fadeInUp {
@@ -196,14 +235,14 @@ section {
     }
 }
 
-#about h2::after, #projects h2::after, #skills h2::after, #contact h2::after {
+#about h2::after, #projects h2::after, #capabilities h2::after, #contact h2::after {
     content: '';
     position: absolute;
     width: 40%;
     height: 3px;
     bottom: -10px;
-    left: 50%; /* CHANGED to center the underline properly */
-    transform: translateX(-50%); /* ADDED to center the underline */
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--accent-primary);
     box-shadow: 0 0 8px var(--accent-primary);
 }
@@ -244,51 +283,150 @@ section {
     text-align: center;
 }
 
+/* About avatar chip */
+.about-avatar-chip {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-primary);
+    box-shadow: 0 0 10px rgba(29, 161, 242, 0.3);
+}
+
+.about-container {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
 #about p {
     font-size: 1.1rem;
     color: var(--text-secondary);
     line-height: 1.8;
     font-weight: 300;
-    margin: 0;
+    margin: 0 0 1rem 0;
+    text-align: center;
+}
+
+#about p:last-child {
+    margin-bottom: 0;
+}
+
+/* Featured Project Panel - Wide, soft glass */
+.featured-project-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), transparent);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-project-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(29, 161, 242, 0.2);
+}
+
+.featured-project-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(29, 161, 242, 0.1), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.featured-content {
+    position: relative;
+    z-index: 1;
+}
+
+.featured-badge {
+    display: inline-block;
+    background-color: var(--accent-secondary);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.featured-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.featured-project-panel h3 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.featured-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.featured-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+    .featured-project-panel {
+        padding: 3rem 4rem;
+    }
 }
 
 /* Projects Grid Specifics */
 .projects-grid {
-    text-align: left; /* Retain if necessary, though card content usually handles alignment */
-    /* display, grid-template-columns, and gap are now in the common rule */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 75rem;
+    margin: 0 auto;
 }
 
+/* Soft panel project cards */
 .project-card {
-    position: relative; /* For badge positioning */
-    background-color: var(--secondary-background);
-    border: 1px solid var(--subtle-accent);
-    border-radius: 8px;
-    padding: 1.5rem;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    padding: 1.75rem;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-
-    /* Animation */
-    opacity: 0; /* Start hidden */
-    animation: fadeInUp 0.5s ease-out forwards;
 }
 
-/* Staggered animation delays */
-.project-card:nth-child(1) { animation-delay: 0.1s; }
-.project-card:nth-child(2) { animation-delay: 0.2s; }
-.project-card:nth-child(3) { animation-delay: 0.3s; }
-.project-card:nth-child(4) { animation-delay: 0.4s; }
-.project-card:nth-child(5) { animation-delay: 0.5s; }
-.project-card:nth-child(6) { animation-delay: 0.6s; }
-/* Add more if there are more projects, or consider a JS solution for dynamic delays */
-
-
 .project-card:hover {
-    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
-    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
-    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .project-icon {
@@ -347,121 +485,98 @@ section {
     margin-top: auto;
 }
 
-/* Featured Project Styling */
-.featured-project {
-    /* grid-column: span 2; /* REMOVED - No longer spans columns */
-    /* Slightly larger, but be mindful of grid behavior with minmax */
-    /* Consider adjusting minmax(320px, 1fr) if this causes issues, */
-    /* or use transform: scale(1.02) for a subtle size increase. */
-    /* For now, let's rely on spanning and distinct styling. */
-    border-color: var(--accent-glow); /* Glowing border base */
-    box-shadow: 0 0 15px var(--accent-glow), 0 0 30px rgba(0, 170, 255, 0.5); /* Enhanced glow */
-}
-
-.featured-project:hover {
-    border-color: var(--accent-primary); /* Maintain glow on hover or enhance */
-    box-shadow: 0 0 25px var(--accent-glow), 0 0 45px rgba(0, 170, 255, 0.7);
-    /* Keep existing hover transform if desired, or modify */
-    transform: translateY(-10px) perspective(1000px) rotateX(1deg) rotateY(1deg); /* Subtle adjustment */
-}
-
-.featured-project::before {
-    content: "🚀 Featured";
-    position: absolute;
-    top: -10px; /* Adjust for desired placement */
-    left: 20px; /* Adjust for desired placement */
-    background-color: var(--accent-secondary); /* Electric magenta */
-    color: var(--text-primary);
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px 15px 15px 0; /* Pill shape pointing right */
-    font-size: 0.85rem;
-    font-weight: 600;
-    z-index: 1;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-
-/* Skills Section - Matching Project Cards Style */
-#skills {
+/* Capabilities Section */
+#capabilities {
     text-align: center;
 }
 
-/* Skills Container Specifics */
-.skills-container {
-    text-align: left; /* Retain if necessary */
-    /* display, grid-template-columns, and gap are now in the common rule */
+.capabilities-container {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-.skill-category {
-    background-color: var(--secondary-background);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    display: flex; /* Added for flex column layout */
-    flex-direction: column; /* Added for flex column layout */
-    opacity: 0; /* Start hidden for animation */
-    animation: fadeInUp 0.5s ease-out forwards; /* Added animation */
+.capability-group {
+    margin-bottom: 2.5rem;
 }
 
-/* Staggered animation delays for skill cards */
-.skill-category:nth-child(1) { animation-delay: 0.1s; }
-.skill-category:nth-child(2) { animation-delay: 0.2s; }
-.skill-category:nth-child(3) { animation-delay: 0.3s; }
-
-
-.skill-category:hover {
-    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
-    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
-    border-color: var(--accent-primary);
+.capability-group:last-child {
+    margin-bottom: 0;
 }
 
-.skill-category h3 {
-    font-size: 1.5rem; /* Consistent with project card h3 */
-    color: var(--text-primary); /* Changed from accent to primary text for consistency */
-    margin-bottom: 0.75rem; /* Adjusted for closer spacing to description */
-    /* border-bottom: 2px solid var(--subtle-accent); Removed border */
-    /* padding-bottom: 0.5rem; Removed padding */
-    font-weight: 700; /* Bold like project card titles */
-    text-align: left; /* Align with content */
-}
-
-.skill-description {
-    font-size: 0.9rem; /* Consistent with project description */
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: 1rem; /* Space before stack */
-    flex-grow: 1; /* Allow description to take up space */
-}
-
-.skill-stack {
-    font-size: 0.85rem; /* Slightly smaller for stack info */
-    color: var(--text-secondary);
-    line-height: 1.4;
-    margin-top: auto; /* Push stack to bottom if card heights vary due to description length */
-}
-
-.skill-stack strong {
-    color: var(--text-accent); /* Accent color for "Stack:" label */
+.capability-group-title {
+    font-size: 1.125rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
     font-weight: 600;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+.capability-group-title::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    bottom: -4px;
+    left: 20%;
+    background-color: var(--subtle-accent);
+}
+
+.capability-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.capability-pill {
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.capability-pill:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+.capability-pill:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
 }
 
 
 /* Contact Section - Card Layout */
-/* Contact Container Specifics */
 .contact-container {
-    align-items: flex-start; /* Keep items aligned to the top if they have different heights */
-    /* display, grid-template-columns, and gap are now in the common rule */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    align-items: flex-start;
 }
 
 .contact-info-card {
-    background-color: var(--secondary-background);
-    padding: 2rem; /* Matching form padding */
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .contact-info p {
@@ -515,68 +630,23 @@ section {
     /* Additional styling if needed */
 }
 
-/* Contact Form Styling - now also a card with hover */
+/* Contact Form Styling */
 .contact-form {
-    background-color: var(--secondary-background);
+    background-color: rgba(255, 255, 255, 0.05);
     padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 100%; /* Ensure it doesn't overflow its grid cell */
+    max-width: 100%;
     box-sizing: border-box;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Added transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Styling for the new code focus card */
-.contact-code-focus-card {
-    background-color: var(--secondary-background);
-    padding: 2rem; /* Matching form padding */
-    border-radius: 8px;
-    border: 1px solid var(--subtle-accent);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    display: flex; /* Added for flex column layout */
-    flex-direction: column; /* Added for flex column layout */
-}
-
-.contact-code-focus-card h3 {
-    font-size: 1.5rem; /* Consistent with other card h3 */
-    color: var(--text-primary);
-    margin-bottom: 1rem; /* Space after heading */
-    font-weight: 700;
-    text-align: left;
-}
-
-.contact-code-focus-card p {
-    font-size: 1rem; /* Adjusted for better readability */
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 0.75rem; /* Consistent spacing between paragraphs */
-}
-
-.contact-code-focus-card p:last-child {
-    margin-bottom: 0; /* No margin for the last paragraph */
-}
-
-.contact-code-focus-card a {
-    color: var(--accent-primary);
-    font-weight: 500;
-}
-
-.contact-code-focus-card a:hover {
-    color: var(--accent-secondary);
-    text-decoration: underline;
-}
-
-
-/* Unified hover for contact cards */
-.contact-info-card:hover,
-.contact-form:hover,
-.contact-code-focus-card:hover { /* Added new card to unified hover */
-    transform: translateY(-10px) perspective(1000px) rotateX(2deg) rotateY(2deg);
-    box-shadow: 0 0 20px var(--accent-primary), 0 10px 30px rgba(0,0,0,0.3);
-    border-color: var(--accent-primary);
+.contact-form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .form-group {
@@ -595,10 +665,10 @@ section {
 .form-group input[type="email"],
 .form-group textarea {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.875rem 1.125rem;
     box-sizing: border-box;
     border-radius: 5px;
-    border: 1px solid var(--subtle-accent);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     background-color: var(--primary-background);
     color: var(--text-primary);
     font-size: 1rem;
@@ -609,7 +679,8 @@ section {
 .form-group input[type="text"]:focus,
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
-    outline: none;
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
     border-color: var(--accent-primary);
     box-shadow: 0 0 8px var(--accent-primary);
 }
@@ -665,7 +736,8 @@ section {
 }
 
 .btn-submit {
-    padding: 0.75rem 1.5rem;
+    height: 2.75rem;
+    padding: 0 1.25rem;
     border-radius: 5px;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
@@ -802,22 +874,27 @@ header {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    #about, #projects, #skills, #contact {
+    #about, #projects, #capabilities, #contact {
         padding: 3rem 1rem;
     }
 
-    #about h2, #projects h2, #skills h2, #contact h2 {
+    #about h2, #projects h2, #capabilities h2, #contact h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
+        margin-top: 3rem;
     }
 
-    .about-container, .projects-grid, .skills-container, .contact-container {
+    .featured-project-panel {
+        padding: 2rem 1.5rem;
+    }
+
+    .about-container, .projects-grid, .contact-container {
         padding: 0 15px;
     }
 
-    .projects-grid, .skills-container, .contact-container { /* Added .contact-container */
-        grid-template-columns: 1fr; /* 1 column for mobile */
-        gap: 1.5rem; /* Consistent gap for mobile */
+    .projects-grid, .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .project-links {
@@ -907,14 +984,18 @@ header {
 }
 
 @media (max-width: 1024px) {
-    .about-container, .projects-grid, .skills-container, .contact-container {
-        padding: 0 40px; /* Existing padding adjustment */
+    .about-container, .projects-grid, .contact-container {
+        padding: 0 40px;
     }
 
-    /* Tablet: 2-column layout for grids */
-    .projects-grid, .skills-container, .contact-container {
+    .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* Gap will remain 2rem as inherited from base, which is fine */
+    }
+}
+
+@media (min-width: 1280px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -927,5 +1008,17 @@ header {
     }
     .social-links {
         justify-content: center;
+    }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
