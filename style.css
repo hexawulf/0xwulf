@@ -149,19 +149,7 @@ header {
     color: var(--accent-primary);
 }
 
-.hero-email {
-    display: block;
-    margin-top: 0.75rem;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: color 0.2s ease, text-shadow 0.2s ease;
-}
 
-.hero-email:hover {
-    color: var(--accent-primary);
-    text-shadow: 0 0 8px rgba(29, 161, 242, 0.4);
-}
 
 .hero-avatar-wrap {
     width: clamp(160px, 18vw, 220px);
