@@ -81,11 +81,6 @@ function initParticles() {
     if (heroCanvas) {
         setupParticleAnimation(heroCanvas, { density: 0.6 });
     }
-
-    const contactCanvas = document.querySelector('#contact .particles-canvas');
-    if (contactCanvas) {
-        setupParticleAnimation(contactCanvas, { density: 0.45 });
-    }
 }
 
 function setupParticleAnimation(canvas, options) {
