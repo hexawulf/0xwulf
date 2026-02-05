@@ -3,8 +3,17 @@
     --primary-background: #0B0B1A;
     --text-primary: #FFFFFF;
     --text-secondary: #B8B8D1;
-    --accent-primary: #1DA1F2;
-    --accent-secondary: #87CEEB;
+    /* Teal accent palette */
+    --accent: #14B8A6;
+    --accent-hover: #5EEAD4;
+    --accent-active: #0D9488;
+    --accent-soft: rgba(20, 184, 166, 0.1);
+    --accent-border: rgba(20, 184, 166, 0.2);
+    --accent-glow: rgba(20, 184, 166, 0.2);
+    --focus-ring: rgba(94, 234, 212, 0.5);
+    /* Legacy variables for backward compatibility */
+    --accent-primary: var(--accent);
+    --accent-secondary: var(--accent-hover);
     --container-max-width: 1120px; /* max-w-screen-xl */
 }
 
@@ -92,6 +101,12 @@ header {
     color: var(--accent-primary);
 }
 
+.nav-link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
 /* Hero */
 #hero {
     min-height: 80vh;
@@ -149,6 +164,12 @@ header {
     color: var(--accent-primary);
 }
 
+.hero-links a:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
 
 
 .hero-avatar-wrap {
@@ -156,7 +177,7 @@ header {
     height: clamp(160px, 18vw, 220px);
     border-radius: 9999px;
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(29, 161, 242, 0.2), 0 0 0 3px rgba(29, 161, 242, 0.1);
+    box-shadow: 0 0 30px var(--accent-glow), 0 0 0 3px var(--accent-border);
     margin: 0 auto;
     line-height: 0;
 }
@@ -188,7 +209,7 @@ header {
     transform: translateX(-50%);
     width: 200px;
     height: 100px;
-    background: radial-gradient(circle, rgba(29, 161, 242, 0.2) 0%, transparent 80%);
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 80%);
     pointer-events: none;
 }
 
@@ -284,6 +305,12 @@ footer {
     color: var(--accent-primary);
 }
 
+.footer-links a:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
 footer p {
     color: var(--text-secondary);
     font-size: 0.9rem;
@@ -312,7 +339,23 @@ footer p {
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(29, 161, 242, 0.2);
+    box-shadow: 0 10px 20px var(--accent-glow);
+    background-color: var(--accent-hover);
+}
+
+.btn:active {
+    transform: translateY(0);
+    background-color: var(--accent-active);
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .project-links {

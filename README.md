@@ -6,7 +6,7 @@ A modern, responsive portfolio website showcasing my projects and skills as a Co
 
 ## ✨ Features
 
-- **Night Owl Aesthetic:** Dark theme with neon cyan and electric magenta accents
+- **Night Owl Aesthetic:** Dark theme with vibrant teal accents
 - **Responsive Design:** Optimized for all screen sizes and devices
 - **Interactive Elements:** Particle animations, typewriter effects, and smooth hover transitions
 - **Modern Typography:** JetBrains Mono and fallback monospace fonts
@@ -23,11 +23,11 @@ A modern, responsive portfolio website showcasing my projects and skills as a Co
 ## 🎨 Design Philosophy
 
 The portfolio follows a **Night Owl** aesthetic with:
-- Deep space blue backgrounds (`#0B0B1A`, `#1A1A2E`)
-- Neon cyan primary accent (`#1DA1F2`)
-- Electric magenta secondary accent (`#7B68EE`)
+- Deep space blue backgrounds (`#0B0B1A`)
+- Vibrant teal primary accent (`#14B8A6`)
+- Bright teal hover states (`#5EEAD4`)
 - Clean, monospace typography for a developer-focused feel
-- Subtle animations and glowing effects
+- Subtle animations and glowing effects with teal accents
 
 ## 📁 Project Structure
 
@@ -79,7 +79,9 @@ Modify CSS custom properties in `:root` to change the color scheme:
 ```css
 :root {
     --primary-background: #0B0B1A;
-    --accent-primary: #1DA1F2;
+    --accent: #14B8A6;
+    --accent-hover: #5EEAD4;
+    --accent-active: #0D9488;
     /* ... other variables */
 }
 ```
