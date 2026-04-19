@@ -208,7 +208,7 @@ function renderProjects() {
     }
 
     if (projectsGrid) {
-        projectsGrid.innerHTML = otherProjects.map(project => `
+        projectsGrid.innerHTML = projects.map(project => `
             <article class="card">
                 <div class="card-content">
                     <h4>${project.icon} ${project.title}</h4>
