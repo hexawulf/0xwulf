@@ -16,14 +16,6 @@ export const projects = [
     liveLink: 'https://containeryard.org',
   },
   {
-    icon: '🔐',
-    title: 'KeyJolt',
-    description: 'Generate RSA PGP and SSH key pairs (2048–4096 bit) from a simple web form. Private keys are deleted right after download or at the latest after five minutes, with rate limiting and strict security headers.',
-    techStack: ['Java 17', 'Spring Boot 4', 'Spring Security', 'Bouncy Castle', 'Thymeleaf'],
-    codeLink: 'https://github.com/hexawulf/KeyJolt',
-    liveLink: 'https://keyjolt.dev',
-  },
-  {
     icon: '🐍',
     title: 'py-scratchpad',
     description: 'A small Python editor to keep open next to a course video: run code with Pyodide, syntax highlighting, autosave, and byte-for-byte .py import/export. Everything stays in the browser — no backend, no accounts.',
@@ -32,12 +24,12 @@ export const projects = [
     liveLink: 'https://py-scratchpad.com',
   },
   {
-    icon: '✂️',
-    title: 'SnippetMate',
-    description: 'Paste it, tag it, find it: a snippet manager SPA with Google sign-in, tags, search and JSON import/export. Built with Vue 3, Express and MySQL as my university project.',
-    techStack: ['Vue 3', 'Vite', 'Bootstrap 5', 'Node.js', 'Express', 'MySQL 8'],
-    codeLink: 'https://github.com/hexawulf/SnippetMate',
-    liveLink: 'https://www.snippetmate.com',
+    icon: '🔐',
+    title: 'KeyJolt',
+    description: 'Generate RSA PGP and SSH key pairs (2048–4096 bit) from a simple web form. Private keys are deleted right after download or at the latest after five minutes, with rate limiting and strict security headers.',
+    techStack: ['Java 17', 'Spring Boot 4', 'Spring Security', 'Bouncy Castle', 'Thymeleaf'],
+    codeLink: 'https://github.com/hexawulf/KeyJolt',
+    liveLink: 'https://keyjolt.dev',
   },
   {
     icon: '📝',
@@ -46,5 +38,13 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Monaco Editor', 'Vitest'],
     codeLink: 'https://github.com/hexawulf/MarkdownMate',
     liveLink: 'https://markdownmate.org',
+  },
+  {
+    icon: '✂️',
+    title: 'SnippetMate',
+    description: 'Paste it, tag it, find it: a snippet manager SPA with Google sign-in, tags, search and JSON import/export. Built with Vue 3, Express and MySQL as my university project.',
+    techStack: ['Vue 3', 'Vite', 'Bootstrap 5', 'Node.js', 'Express', 'MySQL 8'],
+    codeLink: 'https://github.com/hexawulf/SnippetMate',
+    liveLink: 'https://www.snippetmate.com',
   }
 ];
