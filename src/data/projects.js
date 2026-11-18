@@ -24,20 +24,20 @@ export const projects = [
     liveLink: 'https://py-scratchpad.com',
   },
   {
-    icon: '🔐',
-    title: 'KeyJolt',
-    description: 'Generate RSA PGP and SSH key pairs (2048–4096 bit) from a simple web form. Private keys are deleted right after download or at the latest after five minutes, with rate limiting and strict security headers.',
-    techStack: ['Java 17', 'Spring Boot 4', 'Spring Security', 'Bouncy Castle', 'Thymeleaf'],
-    codeLink: 'https://github.com/hexawulf/KeyJolt',
-    liveLink: 'https://keyjolt.dev',
-  },
-  {
     icon: '📝',
     title: 'MarkdownMate',
     description: 'Write and preview Markdown side by side, with math (KaTeX) and code highlighting. Documents stay in the browser and export to .md, HTML or PDF. I use it for course notes and README files.',
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Monaco Editor', 'Vitest'],
     codeLink: 'https://github.com/hexawulf/MarkdownMate',
     liveLink: 'https://markdownmate.org',
+  },
+  {
+    icon: '🔐',
+    title: 'KeyJolt',
+    description: 'Generate RSA PGP and SSH key pairs (2048–4096 bit) from a simple web form. Private keys are deleted right after download or at the latest after five minutes, with rate limiting and strict security headers.',
+    techStack: ['Java 17', 'Spring Boot 4', 'Spring Security', 'Bouncy Castle', 'Thymeleaf'],
+    codeLink: 'https://github.com/hexawulf/KeyJolt',
+    liveLink: 'https://keyjolt.dev',
   },
   {
     icon: '✂️',
