@@ -40,11 +40,11 @@ export const projects = [
     liveLink: 'https://keyjolt.dev',
   },
   {
-    icon: '✂️',
-    title: 'SnippetMate',
-    description: 'Paste it, tag it, find it: a snippet manager SPA with Google sign-in, tags, search and JSON import/export. Built with Vue 3, Express and MySQL as my university project.',
-    techStack: ['Vue 3', 'Vite', 'Bootstrap 5', 'Node.js', 'Express', 'MySQL 8'],
-    codeLink: 'https://github.com/hexawulf/SnippetMate',
-    liveLink: 'https://www.snippetmate.com',
+    icon: '🗄️',
+    title: 'SQL Scratchpad',
+    description: 'Real MariaDB workspaces in the browser: a schema tree, a multi-tab SQL editor and a result grid, with a sample library dataset or your own imported .sql. Nothing is stored; each workspace runs as its own database user and is deleted after 2 h idle.',
+    techStack: ['Vue 3', 'TypeScript', 'CodeMirror 6', 'Fastify 5', 'MariaDB 11.4', 'Playwright', 'Docker'],
+    codeLink: 'https://github.com/hexawulf/sql-scratchpad',
+    liveLink: 'https://sql-scratchpad.com',
   }
 ];
