@@ -25,7 +25,7 @@ export const projects = [
   },
   {
     icon: '🗄️',
-    title: 'SQL Scratchpad',
+    title: 'sql-scratchpad',
     description: 'Real MariaDB workspaces in the browser: a schema tree, a multi-tab SQL editor and a result grid, with a sample library dataset or your own imported .sql. Nothing is stored; each workspace runs as its own database user and is deleted after 2 h idle.',
     techStack: ['Vue 3', 'TypeScript', 'CodeMirror 6', 'Fastify 5', 'MariaDB 11.4', 'Playwright', 'Docker'],
     codeLink: 'https://github.com/hexawulf/sql-scratchpad',
