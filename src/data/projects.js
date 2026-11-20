@@ -2,7 +2,7 @@ export const projects = [
   {
     icon: '🍓',
     title: 'PiDeck',
-    description: 'PiDeck runs on my Raspberry Pi Linux home servers (hence the “Pi”): the control hub for my homelab, with a hub on the Raspberry Pi 5 and small read-only agents on LAN machines, cloud VPSes (over WireGuard) and a Synology NAS. It shows live metrics and 24 h history, remote logs, Docker and PM2 apps, systemd services with alerts, and cron jobs, behind Google sign-in.',
+    description: 'Control hub for my Raspberry Pi homelab. A dashboard running on my Pi 5 that pulls from small read-only agents across my LAN machines, cloud VPSes (over WireGuard) and a Synology NAS, showing live metrics with 24 h history, remote logs, Docker and PM2 apps, systemd services with alerts, and cron jobs, all behind Google sign-in.',
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Express', 'PostgreSQL', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/PiDeck',
     liveLink: 'https://pideck.piapps.dev',
@@ -10,7 +10,7 @@ export const projects = [
   {
     icon: '⏱️',
     title: 'PiTasker',
-    description: 'PiTasker runs on my Raspberry Pi Linux home servers (hence the “Pi”): a web UI for the crontab on a small Linux server, where you edit cron jobs with a diff shown before every write, run them on demand and keep a run history. Small read-only agents add a view of everything scheduled on my other servers, crontabs and systemd timers alike.',
+    description: 'A web UI for cron on my Raspberry Pi servers. Edit jobs with a diff shown before every write, run them on demand, and keep a run history. Small read-only agents pull in everything scheduled across my other machines too, both crontabs and systemd timers.',
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Express', 'PostgreSQL', 'Drizzle', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/PiTasker',
     liveLink: 'https://pitasker.piapps.dev',
