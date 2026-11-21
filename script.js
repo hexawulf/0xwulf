@@ -74,6 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Project rendering
     renderProjects();
+
+    // Footer copyright year (index.html keeps a static year as the no-JS fallback)
+    const yearElement = document.getElementById('copyright-year');
+    if (yearElement) {
+        yearElement.textContent = String(new Date().getFullYear());
+    }
 });
 
 function initParticles() {
