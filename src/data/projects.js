@@ -27,7 +27,7 @@ export const projects = [
     codeLink: 'https://github.com/hexawulf/ContainerYard',
     liveLink: 'https://containeryard.org',
     version: 'v5.4',
-    releaseLink: 'https://github.com/hexawulf/ContainerYard/releases/tag/v5.4.0',
+    releaseLink: 'https://github.com/hexawulf/ContainerYard/releases/tag/v5.4.1',
     dockerLink: 'https://hub.docker.com/r/0xwulf/containeryard',
   },
   {
