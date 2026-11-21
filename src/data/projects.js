@@ -6,6 +6,8 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Express', 'PostgreSQL', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/PiDeck',
     liveLink: 'https://pideck.piapps.dev',
+    version: 'v2.11',
+    releaseLink: 'https://github.com/hexawulf/PiDeck/releases/tag/v2.11.0',
   },
   {
     icon: '⏱️',
@@ -14,6 +16,8 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Express', 'PostgreSQL', 'Drizzle', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/PiTasker',
     liveLink: 'https://pitasker.piapps.dev',
+    version: 'v2.3',
+    releaseLink: 'https://github.com/hexawulf/PiTasker/releases/tag/v2.3.0',
   },
   {
     icon: '🐳',
@@ -22,6 +26,9 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Express', 'Prisma', 'SQLite', 'Redis', 'Docker'],
     codeLink: 'https://github.com/hexawulf/ContainerYard',
     liveLink: 'https://containeryard.org',
+    version: 'v5.4',
+    releaseLink: 'https://github.com/hexawulf/ContainerYard/releases/tag/v5.4.0',
+    dockerLink: 'https://hub.docker.com/r/0xwulf/containeryard',
   },
   {
     icon: '🗄️',
@@ -30,6 +37,9 @@ export const projects = [
     techStack: ['Vue 3', 'TypeScript', 'CodeMirror 6', 'Fastify 5', 'MariaDB 11.4', 'Playwright', 'Docker'],
     codeLink: 'https://github.com/hexawulf/sql-scratchpad',
     liveLink: 'https://sql-scratchpad.com',
+    version: 'v0.3.5',
+    releaseLink: 'https://github.com/hexawulf/sql-scratchpad/releases/tag/v0.3.5',
+    dockerLink: 'https://hub.docker.com/r/0xwulf/sql-scratchpad',
   },
   {
     icon: '🐍',
@@ -38,6 +48,9 @@ export const projects = [
     techStack: ['TypeScript', 'Vite', 'CodeMirror 6', 'Pyodide', 'Vitest', 'Docker'],
     codeLink: 'https://github.com/hexawulf/py-scratchpad',
     liveLink: 'https://py-scratchpad.com',
+    version: 'v0.3.6',
+    releaseLink: 'https://github.com/hexawulf/py-scratchpad/releases/tag/v0.3.6',
+    dockerLink: 'https://hub.docker.com/r/0xwulf/py-scratchpad',
   },
   {
     icon: '📝',
@@ -46,5 +59,7 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Monaco Editor', 'Vitest'],
     codeLink: 'https://github.com/hexawulf/MarkdownMate',
     liveLink: 'https://markdownmate.org',
+    version: 'v3.4',
+    releaseLink: 'https://github.com/hexawulf/MarkdownMate/releases/tag/v3.4.0',
   }
 ];

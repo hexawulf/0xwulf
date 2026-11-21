@@ -294,6 +294,29 @@ header {
     margin: 0 0 1.5rem 0;
 }
 
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: -0.75rem 0 1.5rem 0;
+}
+
+.pill-link {
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.pill-link:hover {
+    background-color: var(--accent-border);
+    border-color: var(--accent-hover);
+    color: var(--text-primary);
+}
+
+.pill-link:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
 /* Footer */
 footer {
     padding: 2rem 1rem;

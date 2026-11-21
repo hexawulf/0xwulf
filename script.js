@@ -190,6 +190,17 @@ function renderProjects() {
         return techStack.map(tech => `<span class="pill">${tech}</span>`).join('');
     }
 
+    function createMetaLinks(project) {
+        const links = [];
+        if (project.version && project.releaseLink) {
+            links.push(`<a href="${project.releaseLink}" target="_blank" rel="noopener noreferrer" class="pill pill-link" aria-label="${project.title} release ${project.version}">🏷️ ${project.version}</a>`);
+        }
+        if (project.dockerLink) {
+            links.push(`<a href="${project.dockerLink}" target="_blank" rel="noopener noreferrer" class="pill pill-link" aria-label="${project.title} on Docker Hub">🐋 Docker Hub</a>`);
+        }
+        return links.length ? `<div class="project-meta">${links.join('')}</div>` : '';
+    }
+
     if (featuredProject && featuredProjectContainer) {
         featuredProjectContainer.innerHTML = `
             <article class="featured-panel">
@@ -198,6 +209,7 @@ function renderProjects() {
                     <h3>${featuredProject.icon} ${featuredProject.title}</h3>
                     <p class="featured-description">${featuredProject.description}</p>
                     <div class="project-pills">${createTechPills(featuredProject.techStack)}</div>
+                    ${createMetaLinks(featuredProject)}
                     <div class="project-links">
                         <a href="${featuredProject.codeLink}" target="_blank" rel="noopener noreferrer" class="btn">View Code</a>
                         <a href="${featuredProject.liveLink}" target="_blank" rel="noopener noreferrer" class="btn">Visit Website</a>
@@ -214,6 +226,7 @@ function renderProjects() {
                     <h4>${project.icon} ${project.title}</h4>
                     <p>${project.description}</p>
                     <div class="project-pills">${createTechPills(project.techStack)}</div>
+                    ${createMetaLinks(project)}
                      <div class="project-links">
                         <a href="${project.codeLink}" target="_blank" rel="noopener noreferrer" class="btn">View Code</a>
                         <a href="${project.liveLink}" target="_blank" rel="noopener noreferrer" class="btn">Visit Website</a>
