@@ -80,7 +80,86 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearElement) {
         yearElement.textContent = String(new Date().getFullYear());
     }
+
+    // About modal
+    initAboutModal();
 });
+
+function initAboutModal() {
+    const openBtn = document.getElementById('about-open');
+    const backdrop = document.getElementById('about-backdrop');
+    const dialog = document.getElementById('about-dialog');
+    const closeBtn = document.getElementById('about-close');
+
+    if (!openBtn || !backdrop || !dialog || !closeBtn) {
+        return;
+    }
+
+    let previouslyFocused = null;
+
+    function focusableElements() {
+        const selector = [
+            'a[href]',
+            'button:not([disabled])',
+            'input:not([disabled])',
+            'select:not([disabled])',
+            'textarea:not([disabled])',
+            '[tabindex]:not([tabindex="-1"])',
+        ].join(', ');
+        return Array.from(dialog.querySelectorAll(selector));
+    }
+
+    function onKeydown(event) {
+        if (event.key === 'Escape') {
+            event.preventDefault();
+            closeModal();
+            return;
+        }
+        if (event.key === 'Tab') {
+            const focusable = focusableElements();
+            if (focusable.length === 0) {
+                event.preventDefault();
+                return;
+            }
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            const active = document.activeElement;
+            if (event.shiftKey) {
+                if (active === first || !dialog.contains(active)) {
+                    event.preventDefault();
+                    last.focus();
+                }
+            } else if (active === last || !dialog.contains(active)) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+    }
+
+    function openModal() {
+        previouslyFocused = document.activeElement;
+        backdrop.hidden = false;
+        document.addEventListener('keydown', onKeydown);
+        closeBtn.focus();
+    }
+
+    function closeModal() {
+        backdrop.hidden = true;
+        document.removeEventListener('keydown', onKeydown);
+        if (previouslyFocused && typeof previouslyFocused.focus === 'function') {
+            previouslyFocused.focus();
+        }
+        previouslyFocused = null;
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (event) => {
+        if (event.target === backdrop) {
+            closeModal();
+        }
+    });
+}
 
 function initParticles() {
     const heroCanvas = document.querySelector('#hero .particles-canvas, .hero .particles-canvas');

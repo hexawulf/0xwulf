@@ -355,6 +355,151 @@ footer {
     border-radius: 4px;
 }
 
+/* Footer "About" trigger: a button styled like the footer links. */
+.footer-link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-link-btn:hover {
+    color: var(--accent-primary);
+}
+
+.footer-link-btn:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* About modal */
+.about-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(11, 11, 26, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.about-backdrop[hidden] {
+    display: none;
+}
+
+.about-dialog {
+    width: 480px;
+    max-width: 96vw;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    background-color: var(--primary-background);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.about-close {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.about-close:hover {
+    background-color: var(--accent-soft);
+    border-color: var(--accent-border);
+}
+
+.about-close:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+}
+
+.about-body {
+    padding: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.about-tagline {
+    margin: 0 0 1rem;
+    color: var(--text-secondary);
+}
+
+.about-meta {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.about-row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0.75rem;
+}
+
+.about-row dt {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.about-row dd {
+    margin: 0;
+    word-break: break-word;
+}
+
+.about-row a {
+    color: var(--accent-hover);
+    text-decoration: none;
+}
+
+.about-row a:hover {
+    text-decoration: underline;
+}
+
+.about-row a:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (max-width: 480px) {
+    .about-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+}
+
 footer p {
     color: var(--text-secondary);
     font-size: 0.9rem;

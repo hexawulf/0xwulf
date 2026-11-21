@@ -65,12 +65,46 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
+                <button type="button" id="about-open" class="footer-link-btn">About</button>
                 <a href="mailto:dev@0xwulf.dev">Email</a>
                 <a href="https://github.com/hexawulf" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
             <p>&copy; <span id="copyright-year">2026</span> 0xWulf</p>
         </div>
     </footer>
+
+    <div class="about-backdrop" id="about-backdrop" hidden>
+        <div
+            class="about-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="about-title"
+            id="about-dialog"
+        >
+            <div class="about-header">
+                <h2 id="about-title">About</h2>
+                <button type="button" class="about-close" id="about-close" aria-label="Close About dialog">&#10005;</button>
+            </div>
+            <div class="about-body">
+                <p class="about-tagline">Raspberry-Pi homelab • Java/TS • AI tooling.</p>
+                <dl class="about-meta">
+                    <div class="about-row">
+                        <dt>Developer</dt>
+                        <dd>
+                            Erling Wulf Weinreich (0xWulf) ·
+                            <a href="mailto:dev@0xwulf.dev">dev@0xwulf.dev</a>
+                        </dd>
+                    </div>
+                    <div class="about-row">
+                        <dt>GitHub</dt>
+                        <dd>
+                            <a href="https://github.com/hexawulf" target="_blank" rel="noopener noreferrer">github.com/hexawulf</a>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="script.js"></script>
 </body>
