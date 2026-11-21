@@ -15,7 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  # Build and deploy are separate jobs on purpose: when deploy-pages ran in the
+  # same job as the upload it sometimes found "0 artifacts" (the artifact was
+  # not yet visible to the API) and failed; 3 of 4 runs on 2026-11-21.
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,6 +35,10 @@ jobs:
         with:
           path: ./
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
