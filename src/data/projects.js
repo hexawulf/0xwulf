@@ -81,5 +81,15 @@ export const projects = [
     liveLink: 'https://markdownmate.org',
     version: 'v3.5',
     releaseLink: 'https://github.com/hexawulf/MarkdownMate/releases/tag/v3.5.0',
+  },
+  {
+    icon: '📊',
+    title: 'TableTamer',
+    description: 'Turn a CSV file into a table you can search, sort, edit and export, all in your browser. Type-aware sorting for numbers, currency and day-first dates, inline cell transforms, column resizing, and a 150-row sample dataset.',
+    techStack: ['React 18', 'TypeScript', 'Vite 7', 'Tailwind 4', 'PapaParse', 'Vitest', 'Playwright'],
+    codeLink: 'https://github.com/hexawulf/tabletamer',
+    liveLink: 'https://tabletamer.piapps.dev',
+    version: 'v1.3.0',
+    releaseLink: 'https://github.com/hexawulf/tabletamer/releases/tag/v1.3.0',
   }
 ];
