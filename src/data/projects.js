@@ -83,13 +83,14 @@ export const projects = [
     releaseLink: 'https://github.com/hexawulf/MarkdownMate/releases/tag/v3.5.0',
   },
   {
-    icon: '📊',
-    title: 'TableTamer',
-    description: 'Turn a CSV file into a table you can search, sort, edit and export, all in your browser. Type-aware sorting for numbers, currency and day-first dates, inline cell transforms, column resizing, and a 150-row sample dataset.',
-    techStack: ['React 18', 'TypeScript', 'Vite 7', 'Tailwind 4', 'PapaParse', 'Vitest', 'Playwright'],
-    codeLink: 'https://github.com/hexawulf/tabletamer',
-    liveLink: 'https://tabletamer.piapps.dev',
-    version: 'v1.3.0',
-    releaseLink: 'https://github.com/hexawulf/tabletamer/releases/tag/v1.3.0',
+    icon: '📦',
+    title: 'Stocky',
+    description: 'Self-hosted homelab hardware tracker and spare-parts ledger: auto-discovers Linux, Pi, VPS, Synology NAS and WSL2 hosts into a rack & chassis view, interactive topology SVG, drift inbox, and ⌘K serial search in one PocketBase container.',
+    techStack: ['Vue 3', 'PocketBase', 'SQLite', 'Bash', 'Vitest', 'Playwright', 'Docker'],
+    codeLink: 'https://github.com/hexawulf/stocky',
+    liveLink: 'https://stocky.piapps.dev',
+    version: 'v1.1.0',
+    releaseLink: 'https://github.com/hexawulf/stocky/releases/tag/v1.1.0',
+    dockerLink: 'https://hub.docker.com/r/0xwulf/stocky',
   }
 ];
