@@ -69,8 +69,8 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Tailwind', 'Radix UI', 'Express', 'PostgreSQL', 'Drizzle', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/CodePatchwork',
     liveLink: 'https://codepatchwork.com',
-    version: 'v2.1.1',
-    releaseLink: 'https://github.com/hexawulf/CodePatchwork/releases/tag/v2.1.1',
+    version: 'v2.1.2',
+    releaseLink: 'https://github.com/hexawulf/CodePatchwork/releases/tag/v2.1.2',
   },
   {
     icon: '📝',
