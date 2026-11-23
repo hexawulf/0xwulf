@@ -16,8 +16,8 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Express', 'PostgreSQL', 'Drizzle', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/PiTasker',
     liveLink: 'https://pitasker.piapps.dev',
-    version: 'v2.3.1',
-    releaseLink: 'https://github.com/hexawulf/PiTasker/releases/tag/v2.3.1',
+    version: 'v2.3.2',
+    releaseLink: 'https://github.com/hexawulf/PiTasker/releases/tag/v2.3.2',
   },
   {
     icon: '🐳',
@@ -26,8 +26,8 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Express', 'Prisma', 'SQLite', 'Redis', 'Docker'],
     codeLink: 'https://github.com/hexawulf/ContainerYard',
     liveLink: 'https://containeryard.org',
-    version: 'v5.5',
-    releaseLink: 'https://github.com/hexawulf/ContainerYard/releases/tag/v5.5.0',
+    version: 'v5.5.2',
+    releaseLink: 'https://github.com/hexawulf/ContainerYard/releases/tag/v5.5.2',
     dockerLink: 'https://hub.docker.com/r/0xwulf/containeryard',
   },
   {
