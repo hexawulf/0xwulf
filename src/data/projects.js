@@ -6,8 +6,8 @@ export const projects = [
     techStack: ['React 19', 'TypeScript', 'Vite', 'Tailwind', 'Express', 'PostgreSQL', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/PiDeck',
     liveLink: 'https://pideck.piapps.dev',
-    version: 'v2.13.0',
-    releaseLink: 'https://github.com/hexawulf/PiDeck/releases/tag/v2.13.0',
+    version: 'v2.13.1',
+    releaseLink: 'https://github.com/hexawulf/PiDeck/releases/tag/v2.13.1',
   },
   {
     icon: '⏱️',
