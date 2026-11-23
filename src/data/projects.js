@@ -58,8 +58,8 @@ export const projects = [
     techStack: ['Vue 3', 'TypeScript', 'CodeMirror 6', 'Fastify 5', 'MariaDB 11.4', 'Playwright', 'Docker'],
     codeLink: 'https://github.com/hexawulf/sql-scratchpad',
     liveLink: 'https://sql-scratchpad.com',
-    version: 'v0.3.6',
-    releaseLink: 'https://github.com/hexawulf/sql-scratchpad/releases/tag/v0.3.6',
+    version: 'v0.3.7',
+    releaseLink: 'https://github.com/hexawulf/sql-scratchpad/releases/tag/v0.3.7',
     dockerLink: 'https://hub.docker.com/r/0xwulf/sql-scratchpad',
   },
   {
