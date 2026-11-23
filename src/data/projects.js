@@ -37,8 +37,8 @@ export const projects = [
     techStack: ['Java 17', 'Spring Boot 4.1', 'Spring Security', 'Bouncy Castle', 'Thymeleaf', 'JUnit 5', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/KeyJolt',
     liveLink: 'https://keyjolt.dev',
-    version: 'v1.3.0',
-    releaseLink: 'https://github.com/hexawulf/KeyJolt/releases/tag/v1.3.0',
+    version: 'v1.3.1',
+    releaseLink: 'https://github.com/hexawulf/KeyJolt/releases/tag/v1.3.1',
   },
   {
     icon: '🐍',
