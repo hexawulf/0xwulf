@@ -16,8 +16,8 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Express', 'PostgreSQL', 'Drizzle', 'Playwright'],
     codeLink: 'https://github.com/hexawulf/PiTasker',
     liveLink: 'https://pitasker.piapps.dev',
-    version: 'v2.3.2',
-    releaseLink: 'https://github.com/hexawulf/PiTasker/releases/tag/v2.3.2',
+    version: 'v2.4.0',
+    releaseLink: 'https://github.com/hexawulf/PiTasker/releases/tag/v2.4.0',
   },
   {
     icon: '🐳',
