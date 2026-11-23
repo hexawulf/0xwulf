@@ -79,8 +79,8 @@ export const projects = [
     techStack: ['React 18', 'TypeScript', 'Vite', 'Tailwind', 'Monaco Editor', 'KaTeX', 'Vitest'],
     codeLink: 'https://github.com/hexawulf/MarkdownMate',
     liveLink: 'https://markdownmate.org',
-    version: 'v3.5',
-    releaseLink: 'https://github.com/hexawulf/MarkdownMate/releases/tag/v3.5.0',
+    version: 'v3.5.1',
+    releaseLink: 'https://github.com/hexawulf/MarkdownMate/releases/tag/v3.5.1',
   },
   {
     icon: '📦',
