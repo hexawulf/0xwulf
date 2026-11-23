@@ -89,8 +89,8 @@ export const projects = [
     techStack: ['Vue 3', 'PocketBase', 'SQLite', 'Bash', 'Vitest', 'Playwright', 'Docker'],
     codeLink: 'https://github.com/hexawulf/stocky',
     liveLink: 'https://stocky.piapps.dev',
-    version: 'v1.1.0',
-    releaseLink: 'https://github.com/hexawulf/stocky/releases/tag/v1.1.0',
+    version: 'v1.2.0',
+    releaseLink: 'https://github.com/hexawulf/stocky/releases/tag/v1.2.0',
     dockerLink: 'https://hub.docker.com/r/0xwulf/stocky',
   }
 ];
