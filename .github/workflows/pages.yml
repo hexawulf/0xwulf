@@ -29,6 +29,21 @@ jobs:
         run: |
           if [ ! -f 404.html ] && [ -f index.html ]; then cp index.html 404.html; fi
 
+      # Root static files are the Pages artifact. Fail the build if the crawl
+      # files or homepage SEO tags are missing before upload.
+      - name: Verify crawl files and homepage SEO tags
+        run: |
+          test -f robots.txt
+          test -f sitemap.xml
+          test -f index.html
+          grep -q '^User-agent: \*$' robots.txt
+          grep -q '^Allow: /$' robots.txt
+          grep -q '^Sitemap: https://0xwulf.dev/sitemap.xml$' robots.txt
+          grep -Fq 'https://0xwulf.dev/' sitemap.xml
+          grep -Fq 'rel="canonical" href="https://0xwulf.dev/"' index.html
+          grep -Fq 'name="description"' index.html
+          python3 -c 'import xml.etree.ElementTree as ET; ET.parse("sitemap.xml")'
+
       # Ensure CNAME ships (you already have CNAME in repo root)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
