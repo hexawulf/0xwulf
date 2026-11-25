@@ -317,6 +317,77 @@ header {
     outline-offset: 2px;
 }
 
+/* Full-width Spotlight Card beneath 3x3 Grid */
+.card.card-spotlight {
+    height: auto;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.spotlight-main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.spotlight-eyebrow {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    border-left: 2px solid var(--accent-primary);
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.card.card-spotlight .spotlight-description {
+    flex-grow: 0;
+    margin: 0 0 1.25rem;
+}
+
+.card.card-spotlight .spotlight-pills {
+    margin: 0 0 1.5rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .card.card-spotlight {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+        padding: 1.5rem 2rem;
+    }
+
+    .spotlight-main {
+        flex: 1 1 auto;
+    }
+
+    .card.card-spotlight .spotlight-description {
+        margin: 0 0 1rem;
+    }
+
+    .card.card-spotlight .spotlight-pills {
+        margin: 0;
+    }
+
+    .card.card-spotlight .spotlight-actions {
+        width: auto;
+        margin-top: 0;
+        flex: 0 0 auto;
+        align-items: center;
+    }
+
+    .card.card-spotlight .spotlight-actions .btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+}
+
 /* Footer */
 footer {
     padding: 2rem 1rem;
