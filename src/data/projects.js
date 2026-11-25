@@ -89,8 +89,8 @@ export const projects = [
     techStack: ['TypeScript', 'Vite', 'CodeMirror 6', 'Pyodide', 'Vitest', 'Docker'],
     codeLink: 'https://github.com/hexawulf/py-scratchpad',
     liveLink: 'https://py-scratchpad.com',
-    version: 'v0.3.10',
-    releaseLink: 'https://github.com/hexawulf/py-scratchpad/releases/tag/v0.3.10',
+    version: 'v0.3.12',
+    releaseLink: 'https://github.com/hexawulf/py-scratchpad/releases/tag/v0.3.12',
     dockerLink: 'https://hub.docker.com/r/0xwulf/py-scratchpad',
   }
 ];
